@@ -1,0 +1,9 @@
+Shift_JIS
+"InputAssist",a001,"...","...",""
+"InputAssist",a002,"Edit...","編集...",""
+"InputAssistEditor",a001,"Close","閉じる",""
+"InputAssistEditor",a002,"Remove","削除",""
+"InputAssistEditor",a003,"Add","追加",""
+"MissingRequestLink",1,"No activity class","アクティビティクラスが指定されていません",""
+"MissingRequestLink",2,"No actor assigned","アクターが割当てられていません",""
+"MissingRequestLink",3,"No request sent to %s","%sにリクエストが送信されていません",""

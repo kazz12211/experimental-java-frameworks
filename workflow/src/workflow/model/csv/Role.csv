@@ -1,0 +1,7 @@
+Guest,ゲスト,true,特定の業務に権限を持たないロールです。社員であれば全社員が利用できる機能を利用することは可能です。
+SystemAdministration,システム管理,false,システム管理者のロールです。
+Manager,マネージャー,false,部門管理者のロールです。
+Analysis,分析者,false,ワークフロー分析機能を利用できるロールです。
+Procurement,購買担当,false,購買担当者のロールです。
+IT,IT担当,false,IT担当者のロールです。
+

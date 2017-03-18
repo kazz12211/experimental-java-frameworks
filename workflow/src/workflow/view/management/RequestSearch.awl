@@ -1,0 +1,76 @@
+<w:HintMessage>
+	<a:Local key="a012">Request Search for administrator.</a:Local>
+</w:HintMessage>
+<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+<t:DataTable title="$[a001]Request Search"
+	displayGroup="$displayGroup" list="$requests"
+	showOptionsMenu="$true"
+	enableScrolling="$true"
+	initialSortKey="requestedDate"
+	tableConfig="$tableConfig">
+	
+	<t:HeadingArea>
+		<div style="float:right">
+			<table border="0">
+			<tr>
+			<td>
+				<a:Local key="a013">Workflow Model:</a:Local>
+			</td>
+			<td>
+			<x:WorkflowModelChooser object="$this" key="selectedModel" />
+			</td>
+			<td>
+				<a:Local key="a014">Request Status:</a:Local>
+			</td>
+			<td>
+				<w:GenericChooser list="$statuss" type="PopupControl" displayKey="label" key="selectedStatus" />
+			</td>
+			<td>
+				<a:Local key="a015">Workflow Title:</a:Local>
+			</td>
+			<td>
+				<a:TextField value="$titleQueryStr" />
+			</td>
+			<td>
+				<a:Local key="a016">Requested From:</a:Local>
+			</td>
+			<td>
+				<w:DateField value="$requestedFrom" formatter="$formatters.shortDate" showYearNavigation="$true" size="12"/>
+			</td>	
+			<td>
+				<a:Local key="a017">To:</a:Local>
+			</td>
+			<td>
+				<w:DateField value="$requestedTo" formatter="$formatters.shortDate" showYearNavigation="$true" size="12"/>
+			</td>
+			<td>
+				<a:Local key="a018">Includes Archives:</a:Local>
+			</td>
+			<td>
+				<a:Checkbox value="$includeArchives" type="boolean" />
+			</td>
+			<td>
+				<w:TextButton action="$search"><a:Local key="a019">Search</a:Local></w:TextButton>
+			</td>
+			</tr>
+			</table>
+		</div>
+	</t:HeadingArea>
+	
+	<t:Column key="workflow.id" label="Id"  align="right"/>
+	<t:Column key="workflow.title" label="$[a002]Title" />
+	<t:Column key="workflow.name" label="$[a003]Name" />
+	<t:Column key="workflow.creator.name" label="$[a004]Creator"/>
+	<t:Column key="workflow.requester.name" label="$[a005]Requester"/>
+	<t:Column key="name" label="$[a006]Request Name" />
+	<t:Column key="requestTo.name" label="$[a007]Actor" />
+	<t:Column key="status.label" label="$[a008]Status" />
+	<t:Column key="requestedDate" formatter="$formatters.dateTime" label="$[a009]Requested Date"/>
+	<t:Column key="submittedDate" formatter="$formatters.dateTime" label="$[a010]Submitted Date"/>
+	<t:Column key="activityRefId" label="$[a011]Ref Id" />
+	<t:Column>
+		<w:TextButton action="$inspect"><a:Local key="a020">Inspect</a:Local></w:TextButton>
+	</t:Column>
+		
+</t:DataTable>
+</div>

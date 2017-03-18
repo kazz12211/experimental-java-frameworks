@@ -1,0 +1,78 @@
+<w:HintMessage>
+	<a:Local key="a011">Workflow Search for administrator.</a:Local>
+</w:HintMessage>
+<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+<t:DataTable title="$[a001]Workflow Search"
+	displayGroup="$displayGroup" list="$workflows"
+	showOptionsMenu="$true"
+	enableScrolling="$true"
+	initialSortKey="createdDate"
+	multiSelect="$true" submitOnSelectionChange="$true"
+	tableConfig="$tableConfig">
+	
+	<t:HeadingArea>
+		<div style="float:right">
+			<table border="0">
+			<tr>
+			<td>
+				<a:Local key="a012">Model:</a:Local>
+			</td>
+			<td>
+			<x:WorkflowModelChooser object="$this" key="selectedModel" />
+			</td>
+			<td>
+				<a:Local key="a013">Status:</a:Local>
+			</td>
+			<td>
+				<w:GenericChooser list="$statuss" type="PopupControl" displayKey="label" key="selectedStatus" />
+			</td>
+			<td>
+				<a:Local key="a014">Title:</a:Local>
+			</td>
+			<td>
+				<a:TextField value="$titleQueryStr" />
+			</td>
+			<td>
+				<a:Local key="a015">Created From:</a:Local>
+			</td>
+			<td>
+				<w:DateField value="$createdFrom" formatter="$formatters.shortDate" showYearNavigation="$true" size="12"/>
+			</td>	
+			<td>
+				<a:Local key="a016">To:</a:Local>
+			</td>
+			<td>
+				<w:DateField value="$createdTo" formatter="$formatters.shortDate" showYearNavigation="$true" size="12"/>
+			</td>
+			<td>
+				<w:TextButton action="$search"><a:Local key="a017">Search</a:Local></w:TextButton>
+			</td>
+			</tr>
+			</table>
+		</div>
+	</t:HeadingArea>
+	
+	<t:Column key="id" label="Id"  align="right"/>
+	<t:Column key="title" label="$[a002]Title" />
+	<t:Column key="name" label="$[a003]Name" />
+	<t:Column key="creator.name" label="$[a004]Creator"/>
+	<t:Column key="requester.name" label="$[a005]Requester"/>
+	<t:Column key="status.label" label="$[a006]Status" />
+	<t:Column key="createdDate" formatter="$formatters.dateTime" label="$[a007]Created On"/>
+	<t:Column key="submittedDate" formatter="$formatters.dateTime" label="$[a008]Submitted Date"/>
+	<t:Column key="rejectedDate" formatter="$formatters.dateTime" label="$[a009]Rejected Date"/>
+	<t:Column key="completedDate" formatter="$formatters.dateTime" label="$[a010]Completed Date"/>
+	<t:Column>
+		<w:TextButton action="$inspect"><a:Local key="a018">Inspect</a:Local></w:TextButton>
+	</t:Column>
+	<t:SelectionButtonArea>
+		<w:TextButton action="$removeSelection" disabled="$unableToRemove">
+			<a:Local key="a019">Remove Selection</a:Local>
+		</w:TextButton>
+		<w:TextButton action="$archiveSelection" disabled="$unableToArchive">
+			<a:Local key="a020">Archive Selection</a:Local>
+		</w:TextButton>
+	</t:SelectionButtonArea>
+		
+</t:DataTable>
+</div>

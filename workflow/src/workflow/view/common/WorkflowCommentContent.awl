@@ -1,0 +1,6 @@
+<w:FormTable>
+	<w:FormRow label="$[a001]Comment">
+		<w:RichTextArea value="$context.workflow.comment"
+			cols="30" rows="5" editable="$editable" />
+	</w:FormRow>
+</w:FormTable>

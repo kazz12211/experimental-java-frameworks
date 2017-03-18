@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bigdatarobo_core"/>
+	<classpathentry kind="var" path="LIB_HOME"/>
+	<classpathentry kind="var" path="LIB_HOME/com.artesware.mail.jar"/>
+	<classpathentry kind="var" path="LIB_HOME/commons-codec-1.7.jar"/>
+	<classpathentry kind="var" path="LIB_HOME/commons-lang-2.6.jar"/>
+	<classpathentry kind="var" path="LIB_HOME/httpclient-4.3.4.jar"/>
+	<classpathentry kind="var" path="LIB_HOME/httpcore-4.3.2.jar"/>
+	<classpathentry kind="var" path="LIB_HOME/jfreechart-1.0.14.jar"/>
+	<classpathentry kind="var" path="LIB_HOME/poi-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="var" path="LIB_HOME/poi-ooxml-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="var" path="LIB_HOME/poi-ooxml-schemas-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ariba.util.jar" sourcepath="AW_HOME/lib/ariba.aw-all-src.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ariba.widgets.jar" sourcepath="AW_HOME/lib/ariba.aw-all-src.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ariba.metaui-jpa.jar" sourcepath="AW_HOME/lib/ariba.aw-all-src.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ariba.metaui.jar" sourcepath="AW_HOME/lib/ariba.aw-all-src.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ariba.aribaweb.jar" sourcepath="AW_HOME/lib/ariba.aw-all-src.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ext/log4j-1.2.15.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ext/mail.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ext-jpa/hibernate3.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ext-jpa/ejb3-persistence.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ext-jpa/hibernate-entitymanager.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ext/iText-5.0.6.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bigdatarobo_rdbms"/>
+	<classpathentry kind="var" path="LIB_HOME/jcommon-1.0.17.jar"/>
+	<classpathentry kind="var" path="AW_HOME/lib/ext-build/javax.servlet.zip"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,35 @@
+	<table><tr>
+	<td valign="top" width="70%">
+	<t:DataTable displayGroup="$sourceDisplayGroup" list="$filteredRoles" multiSelect="$editable"
+		enableScrolling="$true">
+		<t:HeadingArea>
+			<w:SectionHeading title="$[a001]Available Roles"/>
+		</t:HeadingArea>
+		<t:Column key="name" label="$[a002]Name" width="30%"/>
+		<t:Column key="description" label="$[a003]Description" width="65%"/>
+		<a:If ifTrue="$editable">
+		<t:RightButtonArea>
+			<div style="float:right">
+				<w:TextButton action="$addRoles"><a:Local key="a006">Add</a:Local></w:TextButton>
+			</div>
+		</t:RightButtonArea>
+		</a:If>
+	</t:DataTable>
+	</td>
+	<td valign="top" width="30%">
+	<t:DataTable displayGroup="$destDisplayGroup" list="$activity.assignedRoles" multiSelect="$editable"
+		enableScrolling="$true">
+		<t:HeadingArea>
+			<w:SectionHeading title="$[a004]Assigned Roles"/>
+		</t:HeadingArea>
+		<t:Column key="name" label="$[a005]Name" />
+		<a:If ifTrue="$editable">
+		<t:RightButtonArea>
+			<div style="float:right">
+				<w:TextButton action="$removeRoles"><a:Local key="a007">Remove</a:Local></w:TextButton>
+			</div>
+		</t:RightButtonArea>
+		</a:If>
+	</t:DataTable>
+	</td>
+	</tr></table>

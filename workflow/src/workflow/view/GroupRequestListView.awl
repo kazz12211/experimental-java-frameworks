@@ -1,0 +1,48 @@
+<w:HintMessage>
+	<a:Local key="a011">Requests sent to your group.</a:Local>
+</w:HintMessage>
+<t:DataTable title="$[a001]Requests"
+	displayGroup="$displayGroup" list="$requests"
+	showOptionsMenu="$true"
+	enableScrolling="$true"
+	initialSortKey="requestedDate"
+	minHeight="400px"
+	tableConfig="$tableConfig">
+	
+	<t:HeadingArea>
+		<w:SectionHeading title="$[a002]Requests to your subordinates">
+		<div style="float:right">
+			<table border="0">
+			<tr>
+			<td><a:Local key="a012">Requested From</a:Local></td>
+			<td><w:DateField value="$fromDate" formatter="$formatters.shortDate" size="12"/></td>
+			<td><a:Local key="a013">To</a:Local></td>
+			<td><w:DateField value="$toDate" formatter="$formatters.shortDate" size="12"/></td>
+			<td><a:Local key="a014">Model</a:Local></td>
+			<td>
+			<x:ActivityModelChooser object="$this" key="selectedModel" />
+			</td>
+			<td><a:Local key="a015">Status</a:Local></td>
+			<td><w:GenericChooser list="$statuss" type="PopupControl" displayKey="label" key="statusFilter" /></td>
+			<td><a:Checkbox value="$includeSelf" /></td>
+			<td><a:Local key="a016">Includes self</a:Local></td>
+			<td><w:TextButton action="$search"><a:Local key="a017">Search</a:Local></w:TextButton></td>
+			</tr>
+			</table>
+		</div>
+		</w:SectionHeading>
+	</t:HeadingArea>
+	
+	<t:Column key="name" label="$[a003]Name" />
+	<t:Column key="workflow.title" label="$[a004]Workflow Title"/>
+	<t:Column key="workflow.name" label="$[a005]Workflow Name" />
+	<t:Column key="requestTo.name" label="$[a006]Request To" />
+	<t:Column key="status.label" label="$[a007]Status" />
+	<t:Column key="requestedDate" formatter="$formatters.dateTime" label="$[a008]Requested On"/>
+	<t:Column key="submittedDate" formatter="$formatters.dateTime" label="$[a009]Action Submitted" />
+	<t:Column key="expirationDate" formatter="$formatters.dateTime" label="$[a010]Expires" />
+	<t:Column>
+		<w:TextButton action="$inspectWorkflow"><a:Local key="a018">Inspect</a:Local></w:TextButton>
+	</t:Column>
+		
+</t:DataTable>

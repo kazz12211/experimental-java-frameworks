@@ -1,0 +1,63 @@
+<w:FourZoneLayout>
+	<a:Content name="top">
+		<w:FormTable editable="$false" useFourZones="$true">
+			<a:Content name="left">
+			<w:FormRow label="Id">
+				<a:String value="$workflow.id" />
+			</w:FormRow>
+			<w:FormRow label="$[a001]Name">
+				<a:String value="$workflow.name" />
+			</w:FormRow>
+			<w:FormRow label="$[a002]Status">
+				<a:String value="$workflow.status.label" />
+			</w:FormRow>
+			<w:FormRow label="$[a003]Creator">
+				<a:String value="$workflow.creator.name" />
+			</w:FormRow>
+			</a:Content>
+			<a:Content name="right">
+			<w:FormRow label="$[a004]Created">
+				<a:String value="$workflow.createdDate" formatter="$formatters.dateTime" />
+			</w:FormRow>
+			<w:FormRow label="$[a005]Last Modified">
+				<a:String value="$workflow.modifiedDate" formatter="$formatters.dateTime" />
+			</w:FormRow>
+			<w:FormRow label="$[a006]Submitted">
+				<a:String value="$workflow.submittedDate" formatter="$formatters.dateTime" />
+			</w:FormRow>
+			<w:FormRow label="$[a007]Rejected">
+				<a:String value="$workflow.rejectedDate" formatter="$formatters.dateTime" />
+			</w:FormRow>
+			<w:FormRow label="$[a008]Expired">
+				<a:String value="$workflow.expiredDate" formatter="$formatters.dateTime" />
+			</w:FormRow>
+			<w:FormRow label="$[a009]Completed">
+				<a:String value="$workflow.completedDate" formatter="$formatters.dateTime" />
+			</w:FormRow>
+			</a:Content>
+		</w:FormTable>
+	</a:Content>
+	<a:Content name="bottom">
+		<w:TabSet>
+			<w:Tab label="$[a010]Requests">
+				<t:DataTable list="$workflow.requests">
+					<t:Column key="requestedDate" label="$[a011]Requested"
+						formatter="$formatters.dateTime" />
+					<t:Column key="expirationDate" label="$[a012]Expires"
+						formatter="$formatters.dateTime" />
+					<t:Column key="name" label="$[a013]Name" />
+					<t:Column key="requestTo.name" label="$[a014]Actor" />
+					<t:Column key="status.label" label="$[a015]Status" />
+				</t:DataTable>
+			</w:Tab>
+			<w:Tab label="$[a016]Errors">
+				<t:DataTable list="$workflow.errors">
+					<t:Column key="timestamp" label="$[a017]Timestamp" formatter="$formatters.dateTime" />
+					<t:Column key="code" label="$[a018]Code" />
+					<t:Column key="description" label="$[a019]Description" />
+					<t:Column key="exception" label="$[a020]Reason" />
+				</t:DataTable>
+			</w:Tab>
+		</w:TabSet>
+	</a:Content>
+</w:FourZoneLayout>

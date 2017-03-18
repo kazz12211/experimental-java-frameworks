@@ -1,0 +1,126 @@
+<w:HintMessage>
+	<a:Local key="a032">Browsing workflow rules.</a:Local>
+</w:HintMessage>
+<w:BasicPageWrapper hasForm="$true">
+
+	<a:SetValue layoutChangeLatch="$true" />
+
+	<t:DataTable list="$workflowDefs" item="$workflowDef" title="$[a001]Workflow Definitions"
+		indentDetailRow="$true" useRowDetailExpansionControl="$true" 
+		tableConfig="$workflowDefTableConfig" forceColumnUpdate="$layoutChangeLatch">
+		
+		<t:HeadingArea>
+			<div style="float:left">
+				<table><tr>
+				<td><a:Local key="a033">Show Details</a:Local></td>
+				<td><a:Checkbox checked="$showDetails" type="boolean" action="$layoutChanged" /></td>
+				</tr></table>
+			</div>
+		</t:HeadingArea>
+		
+		<t:Column key="name" label="$[a002]Name" nowrap="$true"/>
+		<t:Column key="creatorRoles" label="$[a003]Creator Role">
+			<a:String value="$creatorRoles" />
+		</t:Column>
+		<t:Column key="modelName" label="$[a004]Model Class"/>
+		<t:Column key="controllerName" label="$[a005]Controller Class"/>
+		
+		<t:RowDetail showRowLine="$true">
+		
+			<a:SetValue layoutChangeLatch="$true" />
+
+			<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+			<t:DataTable list="$workflowDef.activities" item="$activityDef" title="$[a006]Activity Definitions"
+				indentDetailRow="$true" useRowDetailExpansionControl="$true"
+				tableConfig="$activityDefTableConfig" forceColumnUpdate="$layoutChangeLatch">
+				<t:Column key="id" label="$[a007]Id" />
+				<t:Column key="name" label="$[a008]Name" nowrap="$true"/>
+				<t:Column key="actorRoles" label="$[a009]Actor Role">
+					<a:String value="$actorRoles" />
+				</t:Column>
+				<t:Column key="expiration.typeAndValue" label="$[a010]Expiration" />
+				<t:Column key="modelName" label="$[a011]Model Class"/>
+				<t:Column key="controllerName" label="$[a012]Controller Class"/>
+				
+				<t:RowDetail showRowLine="$true">
+					<a:If ifTrue="$activityDef.hasTrigger">
+						<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+						<t:DataTable list="$activityDef.allTriggerDefs" title="$[a013]Triggers" >
+							<t:Column key="id" label="$[a014]Id" width="50"/>
+							<t:Column key="stage" label="$[a015]Stage" width="50"/>
+							<t:Column key="triggerClass" label="$[a016]Trigger Class" />
+						</t:DataTable>
+						</div>
+					</a:If>
+					<a:If notEqualNull="$activityDef.userInfoDictionary">
+						<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+							<x:DictionaryView dictionary="$activityDef.userInfoDictionary" showTitle="$true" title="$userInfoTitle"/>
+						</div>
+					</a:If>
+				</t:RowDetail>
+			</t:DataTable>
+			</div>
+			
+			<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+			<t:DataTable list="$workflowDef.rule.activityRefs" item="$activityRef" title="$[a017]Addition Rules" >
+				<t:Column key="id" label="$[a018]Ref Id" width="50"/>
+				<t:Column key="activityName" label="$[a019]Activity" width="100" nowrap="$true">
+					<a:String value="$activityName" />
+				</t:Column>
+				<t:Column key="condition" label="$[a020]Adding Condition">
+					<a:TextArea value="$activityRef.condition" escapeHtml="$true" editable="$false"/>
+				</t:Column>
+			</t:DataTable>
+			</div>
+			
+			<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+			<t:DataTable list="$workflowDef.rule.transitions" item="$transitionDef" title="$[a021]Dependency Rules"
+				indentDetailRow="$false">
+				<t:Column key="sourceId" label="$[a022]Source Id" width="50"/>
+				<t:Column key="sourceActivity" label="$[a023]Source Activity" nowrap="$true">
+					<a:String value="$sourceActivity" />
+				</t:Column>
+				<t:RowDetail showRowLine="$true">
+					<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+					<t:DataTable list="$transitionDef.paths" item="$pathDef">
+						<t:Column key="destinationId" label="$[a024]Dest. Id" width="50"/>
+						<t:Column key="destinationActivity" label="$[a025]Dest. Activity" width="100">
+							<a:String value="$destinationActivity" />
+						</t:Column>
+						<t:Column key="exitStatus" label="$[a026]Exit Status" width="50"/>
+						<t:Column key="condition" label="$[a027]Condition">
+							<a:TextArea value="$pathDef.condition" escapeHtml="$true" editable="$false"/>
+						</t:Column>
+					</t:DataTable>
+					</div>
+				</t:RowDetail>
+				
+			</t:DataTable>
+			</div>
+			
+			<a:If ifTrue="$workflowDef.hasTrigger">
+				<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+				<t:DataTable list="$workflowDef.allTriggerDefs" title="$[a028]Triggers" >
+					<t:Column key="id" label="$[a029]Id" width="50"/>
+					<t:Column key="stage" label="$[a030]Stage" width="50"/>
+					<t:Column key="triggerClass" label="$[a031]Trigger Class" />
+				</t:DataTable>
+				</div>
+			</a:If>
+			
+			<a:If notEqualNull="$workflowDef.userInfoDictionary">
+				<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+					<x:DictionaryView dictionary="$workflowDef.userInfoDictionary" showTitle="$true" title="$userInfoTitle"/>
+				</div>
+			</a:If>
+			
+		</t:RowDetail>
+		
+		<t:ButtonArea>
+			<w:TextButton action="$reload">
+				<a:Local key="a034">Reload</a:Local>
+			</w:TextButton>
+		</t:ButtonArea>
+	</t:DataTable>
+
+</w:BasicPageWrapper>

@@ -1,0 +1,1 @@
+<embed src="$srcUrl" elementId="$elementId" invokeAction="$content" otherBindings="$otherBindingsValues"><a:IncludeContent/></embed>

@@ -1,0 +1,41 @@
+<a:Api>
+	<binding key="workflow" required="$true" direction="get">
+	</binding>
+	<binding key="models" required="$true" direction="get">
+	</binding>
+	<binding key="components" required="$true" direction="get">
+	</binding>
+	<binding key="labels" required="$true" direction="get">
+	</binding>
+</a:Api>
+<a:If ifTrue="$activities.isEmpty">
+	<div style="height:400px;width:400px;margin:100px auto">
+		<table style="border:solid #9999CC 1px;background-color:#fefefe"
+			width="100%" cellspacing="20">
+			<tr>
+				<td align="center">
+					<font color="#999999">
+						<a:Local key="a001">No submitted actions</a:Local>
+					</font>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<a:Else />
+	<table width="100%">
+	<tr>
+	<td width="100%">
+	<div style="float:left">
+	<w:GenericChooser type=PopupControl list="$activities" displayKey="name" action="$chooseActivity" key="activity"/>
+	</div>
+	<div style="float:right">
+	<a:Local key="a002">Submitted:</a:Local> <a:String value="$activity.request.submittedDate" formatter="$formatters.dateTime" /> <a:Local key="a003">By: </a:Local><a:String value="$activity.actor.name" />
+	</div>
+	</td>
+	
+	</tr>
+	<tr><td width="100%">
+	<a:IncludeComponent name="$componentName" activity="$activity" />
+	</td></tr>
+	</table>
+</a:If>

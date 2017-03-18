@@ -1,0 +1,35 @@
+<!DOCTYPE wizard SYSTEM "Wizard.dtd">
+
+<wizard name="RoleAssignmentWizard" label="Role Assignment Request">
+
+	<actions>
+		<action name="saveWorkflow" label="保存" />
+		<action name="submitWorkflow" label="提出" />
+		<action name="saveActivity" label="保存" />
+		<action name="submitActivity" label="提出" />
+		<action name="rejectActivity" label="却下" />
+		<action name="returnActivity" label="差し戻し" />
+		<action name="remove" label="削除" />
+		<action name="withdraw" label="取下" />
+	</actions>
+	
+	<steps>
+	
+		<step name="main" label="Main">
+			<frame name="main" source="RoleAssignmentMainEntry" />
+		</step>
+		
+		<step name="activities" label="Actions">
+			<frame name="activities" source="RoleAssignmentActivities" />
+		</step>
+		
+		<step name="info" label="Info">
+			<frame name="info" source="RoleAssignmentInfo" />
+		</step>
+		
+	</steps>
+	
+	<exit>
+		<frame name="exit" source="RoleAssignmentExit" />
+	</exit>
+</wizard>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<models>
+	<model name="workflow">
+	
+		<entities>
+
+			<entity name="actor_activity" class="jp.co.pwm.workflow.tools.ActorActivity">
+				<columns>
+					<column name="actor_id" key="actorId" />
+					<column name="activities_id" key="activityId" /> 
+				</columns>
+			</entity>
+		
+		</entities>
+		
+		<connection driver-class="org.postgresql.Driver"
+			url="jdbc:postgresql://localhost:5432/workflowdemo" username="ktsubaki"
+			password="kt621221" />
+	</model>
+	
+</models>

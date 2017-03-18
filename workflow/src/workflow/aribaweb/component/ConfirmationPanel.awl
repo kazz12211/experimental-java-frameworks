@@ -1,0 +1,12 @@
+<w:ModalPageWrapper 
+	title="$[a001]Confirmation" 
+	editable="$true" 
+	okAction="$ok" 
+	okTitle="$[a002]OK" 
+	cancelAction="$cancel" 
+	cancelTitle="$[a003]Cancel">
+	
+	<div style="padding:8px 8px 8px 8px;width:480px">
+		<a:String value="$message" />
+	</div>
+</w:ModalPageWrapper>

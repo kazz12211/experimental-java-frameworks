@@ -1,0 +1,22 @@
+<div style="float:right">
+	<a:String value="$context.workflow.title" />
+</div>
+<w:FormTable>
+	<a:If equalNull="$activity">
+
+		<w:FormRow label="$[a001]Approved">
+			<a:Local key="a003">empty</a:Local>
+		</w:FormRow>
+
+		<a:Else />
+		<w:FormRow label="$[a002]Approved">
+			<a:If ifTrue="$editable">
+			<a:Checkbox checked="$activity.approved" type="boolean" action="$approvedChanged" 
+				disabled="$!editable"/>
+			<a:Else />
+			<a:Checkbox value="$activity.approved" type="boolean" />
+			</a:If>
+		</w:FormRow>
+
+	</a:If>
+</w:FormTable>

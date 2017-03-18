@@ -1,0 +1,6 @@
+<w:HintMessage>
+	<a:Local key="a001">Please change requested roles if required.</a:Local>
+</w:HintMessage>
+<w:BasicPageWrapper hasForm="$true">
+	<x:RoleAssignmentActionContent />
+</w:BasicPageWrapper>

@@ -1,0 +1,5 @@
+bigdatarobo.integration
+bigdatarobo.integration.bus
+bigdatarobo.integration.channel
+bigdatarobo.integration.message
+bigdatarobo.integration.util

@@ -1,0 +1,59 @@
+<w:BasicPageWrapper hasForm="$true">
+
+	<a:If ifTrue="$editable">
+	<div style="float:right;margin-right:10px">
+		<a:Hyperlink action="$toggleMode">
+			<a:If ifTrue="$editMode">
+				<a:Local key="a005">Edit Off</a:Local>
+			<a:Else />
+				<a:Local key="a006">Edit On</a:Local>
+			</a:If>
+		</a:Hyperlink>
+	</div>
+	</a:If>
+	
+	<a:If ifTrue="$editMode">
+	
+	<t:DataTable displayGroup="$displayGroup" list="$faqs" item="$currentFaq" enableScrolling="$true" singleSelect="$true">
+	
+		<t:Column key="subject" label="$[a001]Subject">
+			<a:TextArea value="$currentFaq.subject" rows="5" cols="40"/>
+		</t:Column>
+		<t:Column key="question" label="$[a002]Question">
+			<a:TextArea value="$currentFaq.question" rows="5" cols="50" />
+		</t:Column>
+		<t:Column key="answer" label="$[a003]Answer">
+			<a:TextArea value="$currentFaq.answer" rows="5" cols="50" />
+		</t:Column>
+		<t:Column key="frequency" label="$[a004]Frequency">
+			<w:GenericChooser type="PopupControl" list="$frequencies" key="frequency" object="$currentFaq" />
+		</t:Column>
+		
+		<t:ButtonArea>
+			<w:TextButton action="$removeFaq" disabled="$!displayGroup.selectedObject"><a:Local key="a007">Remove</a:Local></w:TextButton>
+			<w:TextButton action="$addFaq"><a:Local key="a008">Add</a:Local></w:TextButton>
+			<w:TextButton action="$saveFaqs"><a:Local key="a009">Save</a:Local></w:TextButton>
+		</t:ButtonArea>
+	</t:DataTable>
+	
+	<a:Else />
+	
+	<a:For list="$faqs" item="$currentFaq">
+		<div style="margin-left:4px;margin-right:80px;font-size:12pt">
+			<a:String value="$currentFaq.subject"/>
+		</div>
+		<br/>
+		<div style="margin-left:14px;margin-right:80px">
+			Q. <a:String value="$currentFaq.question" />
+		</div>
+		<br/>
+		<div style="margin-left:24px;margin-bottom:10px;margin-right:80px;background-color:#fbff7e">
+			A. <a:String value="$currentFaq.answer"/>
+		</div>
+		<br/>
+	</a:For>
+	
+	</a:If>
+	
+
+</w:BasicPageWrapper>

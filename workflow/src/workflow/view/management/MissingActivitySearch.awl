@@ -1,0 +1,34 @@
+<w:HintMessage>
+	<a:Local key="a004">Missing Activity Search for administrator</a:Local>
+</w:HintMessage>
+<t:DataTable title="$[a001]Missing Activities"
+	displayGroup="$displayGroup" list="$missedActivities"
+	showOptionsMenu="$true"
+	enableScrolling="$true"
+	tableConfig="$tableConfig">
+
+	<t:HeadingArea>
+		<div style="float:right">
+			<table border="0">
+			<tr>
+			<td>
+				<a:Local key="a005">User</a:Local>
+			</td>
+			<td>
+				<w:GenericChooser type="PopupControl" list="$users" key="selectedUser" displayKey="name" action="$selectUser"/>
+			</td>
+			<td>
+				<w:TextButton action="$search" disabled="$!selectedUser"><a:Local key="a006">Search</a:Local></w:TextButton>
+			</td>
+			</tr>
+			</table>
+		</div>
+	</t:HeadingArea>
+	
+	<t:Column key="actorId" label="$[a002]Actor Id" />
+	<t:Column key="activityId" label="$[a003]Activity Id" />
+	
+	<t:ButtonArea>
+		<w:TextButton action="$solve" disabled="$displayGroup.selectedObjects"><a:Local key="a007">Solve</a:Local></w:TextButton>
+	</t:ButtonArea>
+</t:DataTable>

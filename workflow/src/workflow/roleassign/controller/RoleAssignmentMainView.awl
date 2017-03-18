@@ -1,0 +1,50 @@
+<w:BasicPageWrapper hasForm="$true">
+<w:FourZoneLayout>
+
+<a:Content name="top">
+<w:FormTable>
+
+	<w:FormRow label="$[a001]Title" labelNowrap="$true">
+		<a:String value="$workflow.title" />
+	</w:FormRow>
+	<w:FormRow label="$[a002]Creator" labelNowrap="$true">
+		<a:String value="$workflow.creator.name"/>
+	</w:FormRow>
+	<w:FormRow label="$[a003]Requester">
+		<a:String value="$workflow.requester.name" />
+	</w:FormRow>
+	<w:FormRow label="$[a009]Comment">
+		<a:TextArea value="$workflow.comment"  editable="$false" cols="50" rows="4" />
+	</w:FormRow>
+
+</w:FormTable>
+
+</a:Content>
+
+<a:Content name="bottom">
+
+	<table><tr>
+	<td valign="top" width="70%">
+	<t:DataTable displayGroup="$sourceDisplayGroup" list="$filteredRoles"
+		enableScrolling="$true">
+		<t:HeadingArea>
+			<w:SectionHeading title="$[a004]Available Roles"/>
+		</t:HeadingArea>
+		<t:Column key="name" label="$[a005]Name" width="30%"/>
+		<t:Column key="description" label="$[a006]Description" width="65%"/>
+	</t:DataTable>
+	</td>
+	<td valign="top" width="30%">
+	<t:DataTable displayGroup="$destDisplayGroup" list="$workflow.requestedRoles"
+		enableScrolling="$true">
+		<t:HeadingArea>
+			<w:SectionHeading title="$[a007]Requested Roles"/>
+		</t:HeadingArea>
+		<t:Column key="name" label="$[a008]Name" />
+	</t:DataTable>
+	</td>
+	</tr></table>
+</a:Content>
+</w:FourZoneLayout>
+
+</w:BasicPageWrapper>

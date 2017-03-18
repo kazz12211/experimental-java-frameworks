@@ -1,0 +1,12 @@
+<w:ModalPageWrapper title="$[a001]Alert" hasForm="$true" doneTitle="$[a002]Close" doneAction="$close">
+	<div style="padding:4px 4px 4px 4px">
+		<w:FourZoneLayout widthLeft="70px" widthRight="320px">
+		<a:Content name="left">
+		<a:Image filename="cmdbar_prod.gif" />
+		</a:Content>
+		<a:Content name="right">
+				<a:String value="$message" />
+		</a:Content>
+		</w:FourZoneLayout>
+	</div>
+</w:ModalPageWrapper>

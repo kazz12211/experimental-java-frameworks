@@ -1,0 +1,6 @@
+<w:GenericChooser
+	list="$models" 
+	key="^key" 
+	object="^object"
+	type="PopupControl"
+	displayKey="name" />

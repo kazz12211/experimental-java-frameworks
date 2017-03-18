@@ -1,0 +1,93 @@
+<w:HintMessage>
+	<a:Local key="a014">Analysis by Activity</a:Local>
+</w:HintMessage>
+<w:FourZoneLayout>
+<a:Content name="top">
+<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+
+<a:SetValue layoutChangeLatch="$true" />
+
+<t:DataTable title="$[a001]Activity Analysis"
+	displayGroup="$displayGroup" list="$activities"
+	showOptionsMenu="$true"
+	enableScrolling="$true"
+	initialSortKey="request.requestedDate"
+	pivotLayout="$true"
+	rowFields="$selectedLayout.rowFields"
+	columnFields="$selectedLayout.columnFields"
+	columnAttributes="$selectedLayout.columnAttributes"
+	forceColumnUpdate="$layoutChangeLatch">
+	
+	<a:Content name="optionsMenu">
+		<t:OptionsMenuButton showConfigureLayout="$false" />
+	</a:Content>
+	
+	<t:HeadingArea>
+		<div style="float:right">
+			<table border="0">
+			<tr>
+			<td>
+				<a:Local key="a015">Layout:</a:Local>
+			</td>
+			<td>
+				<w:PopupControl list="$layouts" item="$iter" selection="$selectedLayout" action="$layoutChanged">$iter.name</w:PopupControl>
+			</td>
+			<td>
+				<a:Local key="a016">Model:</a:Local>
+			</td>
+			<td>
+				<x:ActivityModelChooser object="$this" key="selectedModel" />
+			</td>
+			<td>
+				<a:Local key="a017">Requested From:</a:Local>
+			</td>
+			<td>
+				<w:DateField value="$startDate" formatter="$formatters.shortDate" showYearNavigation="$true" size="12"/>
+			</td>	
+			<td>
+				<a:Local key="a018">To:</a:Local>
+			</td>
+			<td>
+				<w:DateField value="$endDate" formatter="$formatters.shortDate" showYearNavigation="$true" size="12"/>
+			</td>
+			<td>
+				<a:Local key="a019">Include Archives:</a:Local>
+			</td>
+			<td>
+				<a:Checkbox value="$includeArchives" type="boolean" />
+			</td>
+			<td>
+				<a:Local key="a020">Submitted Only:</a:Local>
+			</td>
+			<td>
+				<a:Checkbox value="$submittedOnly" type="boolean" />
+			</td>
+			<td>
+				<w:TextButton action="$search"><a:Local key="a021">Search</a:Local></w:TextButton>
+			</td>
+			</tr>
+			</table>
+		</div>
+	</t:HeadingArea>
+	
+	<t:Column key="name" label="$[a002]Name"  nowrap="$true"/>
+	<t:Column key="actor.name" label="$[a003]Actor"  nowrap="$true"/>
+	<t:Column key="request.workflow.name" label="$[a004]Workflow"  nowrap="$true"/>
+	<t:Column key="request.requestedDate" formatter="$formatters.dateTime" label="$[a005]Requested Date" nowrap="$true"/>
+	<t:Column key="request.submittedDate" formatter="$formatters.dateTime" label="$[a006]Submitted Date"  nowrap="$true"/>
+	<t:Column key="request.elapsedTime" formatter="$formatters.duration" label="$[a007]Elapsed Time" initiallyVisible="$false" align="right" nowrap="$true"/>
+	<t:Column key="request.handledTime" formatter="$formatters.duration" label="$[a008]Process Time" align="right" nowrap="$true"/>
+	<t:Column key="request.requestedYear" label="$[a009]Request Year"  nowrap="$true"/>
+	<t:Column key="request.requestedMonth" label="$[a010]Request Month"  nowrap="$true"/>
+	<t:Column key="request.submittedYear" label="$[a011]Submit Year"  nowrap="$true"/>
+	<t:Column key="request.submittedMonth" label="$[a012]Submit Month"  nowrap="$true"/>
+	<t:Column key="action" label="$[a013]Action">
+		<w:TextButton action="$inspect"><a:Local key="a022">Inspect</a:Local></w:TextButton>
+	</t:Column>
+		
+</t:DataTable>
+</div>
+</a:Content>
+<a:Content name="bottom">
+</a:Content>
+</w:FourZoneLayout>

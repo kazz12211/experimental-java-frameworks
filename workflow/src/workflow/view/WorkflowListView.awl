@@ -1,0 +1,55 @@
+<w:HintMessage>
+	<a:Local key="a010">Workflows created by you.</a:Local>
+</w:HintMessage>
+<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+<t:DataTable title="$[a001]Workflows"
+	displayGroup="$displayGroup" list="$filteredObjects"
+	showOptionsMenu="$true"
+	enableScrolling="$true"
+	initialSortKey="createdDate"
+	multiSelect="$true" submitOnSelectionChange="$true"
+	minHeight="400px"
+	tableConfig="$tableConfig">
+	
+	<t:HeadingArea>
+		<w:SectionHeading title="$[a002]Workflows">
+		<div style="float:right">
+			<a:If ifTrue="$session.isLoggedIn">
+			<table border="0">
+			<tr>
+			<td>
+				<a:If ifTrue="$availableModels.size">
+					<w:GenericChooser list="$availableModels" type="PopupControl" displayKey="name" key="modelFilter" action="$null"/>
+				</a:If>
+			</td>
+			<td><w:GenericChooser list="$statuss" type="PopupControl" displayKey="label" key="statusFilter" action="$null"/></td>
+			</tr>
+			</table>
+			</a:If>
+		</div>
+		</w:SectionHeading>
+	</t:HeadingArea>
+	
+	<t:Column key="id" label="Id"  align="right"/>
+	<t:Column key="title" label="$[a003]Title" />
+	<t:Column key="name" label="$[a004]Name" />
+	<t:Column key="creator.name" label="$[a005]Creator"/>
+	<t:Column key="requester.name" label="$[a006]Requester"/>
+	<t:Column key="status.label" label="$[a007]Status" />
+	<t:Column key="createdDate" formatter="$formatters.dateTime" label="$[a008]Created On"/>
+	<t:Column key="submittedDate" formatter="$formatters.dateTime" label="$[a009]Submitted Date"/>
+	<t:Column>
+		<w:TextButton action="$inspect"><a:Local key="a011">Inspect</a:Local></w:TextButton>
+		<w:TextButton action="$edit" disable="$!displayGroup.currentItem.enableToEdit"><a:Local key="a012">Edit</a:Local></w:TextButton>
+		<w:TextButton action="$makeCopy" disable="$!displayGroup.currentItem.enableToEdit"><a:Local key="a013">Make Copy</a:Local></w:TextButton>
+	</t:Column>
+	<t:SelectionButtonArea>
+		<w:TextButton action="$removeSelection" disabled="$unableToDeleteWorkflows">
+			<a:Local key="a014">Remove Selection</a:Local>
+		</w:TextButton>
+		<w:TextButton action="$withdrawSelection" disabled="$unableToWithdrawWorkflows">
+			<a:Local key="a015">Withdraw Selection</a:Local>
+		</w:TextButton>		
+	</t:SelectionButtonArea>		
+</t:DataTable>
+</div>

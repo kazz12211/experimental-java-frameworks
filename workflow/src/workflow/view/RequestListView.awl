@@ -1,0 +1,48 @@
+<w:HintMessage>
+	<a:Local key="a012">Requests sent to you.</a:Local>
+</w:HintMessage>
+<div style="border:solid #9999CC 1px;margin-right:6px;margin-top:6px;margin-bottom:6px;margin-left:6px">
+<t:DataTable title="$[a001]Requests"
+	displayGroup="$displayGroup" list="$filteredObjects"
+	showOptionsMenu="$true"
+	enableScrolling="$true"
+	initialSortKey="requestedDate"
+	singleSelect="$true" showSelectionColumn="$false"
+	minHeight="400px"
+	tableConfig="$tableConfig">
+	
+	<t:HeadingArea>
+		<w:SectionHeading title="$[a002]Requests">
+		<div style="float:right">
+			<a:If ifTrue="$session.isLoggedIn">
+			<table border="0">
+			<tr>
+			<td>
+				<a:If ifTrue="$workflowModels.size">
+					<w:GenericChooser list="$workflowModels" type="PopupControl" displayKey="name" key="modelFilter" action="$null"/>
+				</a:If>
+			</td>
+			<td><w:GenericChooser list="$statuss" type="PopupControl" displayKey="label" key="statusFilter" action="$null"/></td>
+			</tr>
+			</table>
+			</a:If>
+		</div>
+		</w:SectionHeading>
+	</t:HeadingArea>
+	
+	<t:Column key="name" label="$[a003]Name" />
+	<t:Column key="workflow.title" label="$[a004]Workflow Title"/>
+	<t:Column key="workflow.name" label="$[a005]Workflow Name" />
+	<t:Column key="requestTo.name" label="$[a006]Request To" />
+	<t:Column key="action.actor.name" label="$[a007]Actor" />
+	<t:Column key="status.label" label="$[a008]Status" />
+	<t:Column key="requestedDate" formatter="$formatters.dateTime" label="$[a009]Requested On"/>
+	<t:Column key="submittedDate" formatter="$formatters.dateTime" label="$[a010]Action Submitted" />
+	<t:Column key="expirationDate" formatter="$formatters.dateTime" label="$[a011]Expires" />
+	<t:Column>
+		<w:TextButton action="$action"><a:Local key="a013">Action</a:Local></w:TextButton>
+		<w:TextButton action="$inspect"><a:Local key="a014">Inspect</a:Local></w:TextButton>
+	</t:Column>
+		
+</t:DataTable>
+</div>

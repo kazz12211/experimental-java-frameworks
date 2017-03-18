@@ -1,0 +1,84 @@
+<w:HintMessage>
+	<a:Local key="a010">Summary by workflow</a:Local>
+</w:HintMessage>
+<w:FourZoneLayout>
+<a:Content name="top">
+<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+
+<a:SetValue layoutChangeLatch="$true" />
+
+<t:DataTable title="$[a001]Workflow Summary"
+	displayGroup="$displayGroup" list="$summaries"
+	showOptionsMenu="$true"
+	enableScrolling="$true"
+	initialSortKey="averageProcessTime"
+	pivotLayout="$true"
+	rowFields="$selectedLayout.rowFields"
+	columnFields="$selectedLayout.columnFields"
+	columnAttributes="$selectedLayout.columnAttributes"
+	forceColumnUpdate="$layoutChangeLatch">
+	
+	<a:Content name="optionsMenu">
+		<t:OptionsMenuButton showConfigureLayout="$false" />
+	</a:Content>
+
+	<t:HeadingArea>
+		<div style="float:right">
+			<table border="0">
+			<tr>
+			<td>
+				<a:Local key="a011">Layout:</a:Local>
+			</td>
+			<td>
+				<w:PopupControl list="$layouts" item="$iter" selection="$selectedLayout" action="$layoutChanged">$iter.name</w:PopupControl>
+			</td>
+			<td>
+				<a:Local key="a012">Model:</a:Local>
+			</td>
+			<td>
+			<x:WorkflowModelChooser object="$this" key="selectedModel" />
+			</td>
+			<td>
+				<a:Local key="a013">Start Year:</a:Local>
+			</td>
+			<td>
+				<w:GenericChooser list="$startYears" type="PopupControl" key="selectedStartYear" />
+			</td>
+			<td>
+				<a:Local key="a014">End Year:</a:Local>
+			</td>
+			<td>
+				<w:GenericChooser list="$endYears" type="PopupControl" key="selectedEndYear" />
+			</td>
+			<td>
+				<w:TextButton action="$search"><a:Local key="a015">Search</a:Local></w:TextButton>
+			</td>
+			</tr>
+			</table>
+		</div>
+	</t:HeadingArea>
+	
+	<t:Column key="modelName" label="$[a002]Model" nowrap="$true"/>
+	<t:Column key="year" label="$[a003]Year" nowrap="$true" />
+	<t:Column key="month" label="$[a004]Month" nowrap="$true"/>
+	<t:Column key="userName" label="$[a005]Creator" nowrap="$true"/>
+	<t:Column key="status" nowrap="$true"/>
+	<t:Column key="averageProcessTime" label="$[a006]Average Proc. Time" formatter="$formatters.hms" align="right" nowrap="$true"/>
+	<t:Column key="minProcessTime" label="$[a007]Min Proc. Time" formatter="$formatters.hms" align="right" nowrap="$true"/>
+	<t:Column key="maxProcessTime" label="$[a008]Max Proc. Time" formatter="$formatters.hms" align="right" nowrap="$true"/>
+	<t:Column key="count" label="$[a009]Count" formatter="$formatters.long" align="right" nowrap="$true"/>
+		
+	<t:ButtonArea>
+		<table>
+		<tr>
+		<td><a:Local key="a016">Last Modified</a:Local>:</td>
+		<td><a:String value="$lastModifiedDate" formatter="$formatters.dateTime" /></td>
+		</tr>
+		</table>
+	</t:ButtonArea>
+</t:DataTable>
+</div>
+</a:Content>
+<a:Content name="bottom">
+</a:Content>
+</w:FourZoneLayout>

@@ -1,0 +1,16 @@
+<p>
+	<w:WizardAction name="ok">
+		<font size="2">
+		<a:If ifTrue="$frame.wizard.isInspectMode">
+			<a:Local key="a001">Continue viewing</a:Local>
+		<a:Else />
+			<a:Local key="a002">Continue editing</a:Local>
+		</a:If>
+		</font>
+	</w:WizardAction>
+</p>
+<br/>
+<p>
+	<a:Local key="a003">To finish this wizard, push Cancel button.</a:Local>
+</p>
+

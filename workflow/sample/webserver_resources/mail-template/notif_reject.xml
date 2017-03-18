@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mail-template>
+	<subject>[%s] ワークフローが却下されました</subject>
+	<body>
+%s 様
+
+ワークフロー「%s」の「%s」が却下されました。
+</body>
+</mail-template>

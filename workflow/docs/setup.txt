@@ -1,0 +1,73 @@
+- Drop database
+\c postgres
+drop database workflowdemo;
+
+- Create database
+\c postgres
+create database workflowdemo owner ktsubaki encoding 'UTF8';
+grant all on database workflowdemo to ktsubaki;
+
+- List workflow related tables
+\c workflowdemo
+\dt *
+
+- Delete transaction data
+\c workflowdemo
+delete from actor_activity;
+delete from actor_request;
+delete from actor_workflow;
+delete from activity_attachment;
+delete from workflow_attachment;
+delete from workflow_error;
+delete from workflow_request;
+delete from workflow_transition;
+delete from attachment;
+delete from error;
+delete from mail;
+delete from approvalaction;
+delete from confirmaction;
+delete from transition;
+delete from request;
+delete from roleassignmentaction_actor;
+delete from roleassignmentrequest_actor;
+delete from roleassignmentaction;
+delete from roleassignmentrequest;
+delete from procure_procurelineitem;
+delete from procure;
+delete from procurelineitem;
+delete from analysisdataactivity;
+delete from analysisdataworkflow;
+delete from analysissummaryactivity;
+delete from analysissummaryworkflow;
+
+- recreate database
+\c postgres
+drop database workflowdemo;
+create database workflowdemo owner ktsubaki encoding 'UTF8';
+grant all on database workflowdemo to ktsubaki;
+
+- Delete analysis data
+delete from analysisdataworkflow;
+delete from analysisdataactivity;
+delete from analysissummaryactivity;
+delete from analysissummaryworkflow;
+
+
+Directories
+
+/opt/local/schedule
+/opt/local/logs
+/opt/local/workflow
+/opt/local/workflow/dashboard
+/opt/local/workflow/tableconfig
+/opt/local/workflow/userdict
+/opt/local/workflow/viewpref
+
+Crontab entries
+
+5 * * * 1-5 /opt/local/bin/wget http://localhost:8080/WorkflowDemo/Main/ad/expirationWatch/ -O /opt/local/schedule/expirationWatchDemo.html
+35 * * * 1-5 /opt/local/bin/wget http://localhost:8080/WorkflowDemo/Main/ad/expirationWatch/ -O /opt/local/schedule/expirationWatchDemo.html
+0 * * * * /opt/local/bin/wget http://localhost:8080/WorkflowDemo/Main/ad/analysisGen/ -O /opt/local/schedule/analysisGenDemo.html
+0 0 * * * /opt/local/bin/wget http://localhost:8080/WorkflowDemo/Main/ad/cleanupWorkflows/ -O /opt/local/schedule/cleanupWorkflowsDemo.html
+0,5,10,15,20,25,30,35,40,45,50,55 * * * * /opt/local/bin/wget http://localhost:8080/WorkflowDemo/Main/ad/missingRequestLinks/ -O /opt/local/schedule/missingRequestLinks.html
+

@@ -1,0 +1,6 @@
+システム管理者,admin,admin@demo.jp,admin,SystemAdministration
+一般ユーザ,guest,guest@demo.jp,guest,Guest
+購買担当者,procure,procure@demo.jp,procure,Procurement
+マネージャー,manager,manager@demo.jp,manager,Manager
+IT担当者,it,it@demo.jp,it,IT
+

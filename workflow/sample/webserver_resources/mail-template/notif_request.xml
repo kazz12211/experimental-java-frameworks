@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mail-template>
+	<subject>[%s] ワークフローの処理依頼が届いています</subject>
+	<body>
+%s 様
+
+ワークフロー「%s」 タイトル「%s」に「%s」の依頼があります。
+</body>
+</mail-template>

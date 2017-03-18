@@ -1,0 +1,26 @@
+<w:ModalPageWrapper title="$[a001]User Preferences"
+	hasForm="$true" doneTitle="$[a002]Close" doneAction="$close">
+	<w:FourZoneLayout>
+		<a:Content name="top">
+			<w:TabSet>
+				<w:Tab label="$[a003]Person Info.">
+					<x:PersonInfoView />
+				</w:Tab>
+				<w:Tab label="$[a004]Notifications">
+					<x:NotificationSettingView />
+				</w:Tab>
+				<w:Tab label="$[a005]Display">
+					<x:DisplaySettingView />
+				</w:Tab>
+			</w:TabSet>
+		</a:Content>
+	</w:FourZoneLayout>
+	<a:Content name="buttons">
+		<w:TextButton action="$save">
+			<a:Local key="a006">Save and Close</a:Local>
+		</w:TextButton>
+		<w:TextButton action="$apply">
+			<a:Local key="a007">Apply Changes</a:Local>
+		</w:TextButton>
+	</a:Content>
+</w:ModalPageWrapper>

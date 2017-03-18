@@ -1,0 +1,47 @@
+<w:HintMessage>
+	<a:Local key="a010">Workflows created by subordinates.</a:Local>
+</w:HintMessage>
+<t:DataTable title="$[a001]Workflows"
+	displayGroup="$displayGroup" list="$workflows"
+	showOptionsMenu="$true"
+	enableScrolling="$true"
+	initialSortKey="createdDate"
+	minHeight="400px"
+	tableConfig="$tableConfig">
+	
+	<t:HeadingArea>
+		<w:SectionHeading title="$[a002]Workflows by subordinates">
+		<div style="float:right">
+			<table border="0">
+			<tr>
+			<td><a:Local key="a011">Create From</a:Local></td>
+			<td><w:DateField value="$fromDate" formatter="$formatters.shortDate" size="12"/></td>
+			<td><a:Local key="a012">To</a:Local></td>
+			<td><w:DateField value="$toDate" formatter="$formatters.shortDate" size="12"/></td>
+			<td><a:Local key="a013">Model</a:Local></td>
+			<td>
+			<x:WorkflowModelChooser object="$this" key="selectedModel" />
+			</td>
+			<td><a:Local key="a014">Status</a:Local></td>
+			<td><w:GenericChooser list="$statuss" type="PopupControl" displayKey="label" key="statusFilter" /></td>
+			<td><a:Checkbox value="$includeSelf" /></td>
+			<td><a:Local key="a015">Includes self</a:Local></td>
+			<td><w:TextButton action="$search"><a:Local key="a016">Search</a:Local></w:TextButton></td>
+			</tr>
+			</table>
+		</div>
+		</w:SectionHeading>
+	</t:HeadingArea>
+	
+	<t:Column key="title" label="$[a003]Title" />
+	<t:Column key="name" label="$[a004]Name" />
+	<t:Column key="creator.name" label="$[a005]Creator"/>
+	<t:Column key="requester.name" label="$[a006]Requester"/>
+	<t:Column key="status.label" label="$[a007]Status" />
+	<t:Column key="createdDate" formatter="$formatters.dateTime" label="$[a008]Created On"/>
+	<t:Column key="submittedDate" formatter="$formatters.dateTime" label="$[a009]Submitted Date"/>
+	<t:Column>
+		<w:TextButton action="$inspect"><a:Local key="a017">Inspect</a:Local></w:TextButton>
+	</t:Column>
+		
+</t:DataTable>

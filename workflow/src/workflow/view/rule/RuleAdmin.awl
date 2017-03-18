@@ -1,0 +1,5 @@
+<w:TabSet>
+	<w:Tab label="$[a001]Rule Browser">
+		<x:RuleBrowser />
+	</w:Tab>
+</w:TabSet>

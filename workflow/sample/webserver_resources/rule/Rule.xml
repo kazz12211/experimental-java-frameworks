@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<workflows>
+	<workflow 
+		name="購買" 
+		model="app.model.Procure" 
+		controller="app.controller.ProcureWizard">
+		
+		<creator-role name="isEmployee" type="property" />
+		
+		<activities>
+			<activity 
+				id="1"
+				name="上司の承認"
+				model="jp.co.pwm.workflow.model.ApprovalAction"
+				controller="app.controller.ProcureApprovalWizard">
+				
+				<actor-role name="creator.manager" type="relative"/>
+			</activity>
+			
+			<activity 
+				id="2"
+				name="上司の承認"
+				model="jp.co.pwm.workflow.model.ApprovalAction"
+				controller="app.controller.ProcureApprovalWizard">
+				
+				<actor-role name="requester.manager" type="relative"/>
+			</activity>
+			
+			<activity 
+				id="3"
+				name="購買部門の承認"
+				model="jp.co.pwm.workflow.model.ApprovalAction"
+				controller="app.controller.ProcureApprovalWizard">
+				
+				<actor-role name="Procurement" type="role"/>
+			</activity>
+			
+			<activity 
+				id="4"
+				name="管理者承認"
+				model="jp.co.pwm.workflow.model.ApprovalAction"
+				controller="app.controller.ProcureApprovalWizard">
+				
+				<actor-role name="SystemAdministration" type="role"/>
+			</activity>
+		</activities>
+		
+	
+		<rule>
+		
+			<addition>
+				<activity-ref id="1">
+					<condition>
+						<key-value key="requester" operator="isnull" />
+					</condition>
+				</activity-ref>
+				<activity-ref id="2">
+					<condition>
+						<key-value key="requester" operator="isnotnull" />
+					</condition>
+				</activity-ref>
+				<activity-ref id="3" />
+				<activity-ref id="4">
+					<condition>
+						<or>
+						<and>
+							<key-value key="requester" operator="isnull" />
+							<key-value key="creator.manager" operator="isnull" />
+						</and>
+						<and>
+							<key-value key="requester" operator="isnotnull" />
+							<key-value key="requester.manager" operator="isnull" />
+						</and>
+						</or>
+					</condition>
+				</activity-ref>
+			
+			</addition>
+			
+			<dependency>
+			
+				<!--  上司の承認の後に購買担当が承認 -->
+				<transition>
+					<source id="1"/>
+					<path>
+						<condition>
+							<key-value key="action.approved" value="true" operator="eq" />
+						</condition>
+						<destination id="3" />
+					</path>
+					<path>
+						<condition>
+							<key-value key="action.approved" value="false" operator="eq" />
+						</condition>
+						<exit status="rejected" />
+					</path>
+				</transition>
+				<!--  上司の承認の後に購買担当が承認 -->
+				<transition>
+					<source id="2"/>
+					<path>
+						<condition>
+							<key-value key="action.approved" value="true" operator="eq" />
+						</condition>
+						<destination id="3" />
+					</path>
+					<path>
+						<condition>
+							<key-value key="action.approved" value="false" operator="eq" />
+						</condition>
+						<exit status="rejected" />
+					</path>
+				</transition>
+				<!--  上司がいない場合 -->
+				<transition>
+					<source id="4"/>
+					<path>
+						<condition>
+							<key-value key="action.approved" value="true" operator="eq" />
+						</condition>
+						<destination id="3" />
+					</path>
+					<path>
+						<condition>
+							<key-value key="action.approved" value="false" operator="eq" />
+						</condition>
+						<exit status="rejected" />
+					</path>
+				</transition>
+				
+				<!-- 購買担当の承認後ワークフローを完了 -->
+				<transition>
+					<source id="3" />
+					<path>
+						<condition>
+							<key-value key="action.approved" value="true" operator="eq" />
+						</condition>
+						<exit status="completed" />
+					</path>
+					<path>
+						<condition>
+							<key-value key="action.approved" value="false" operator="eq" />
+						</condition>
+						<exit status="rejected" />
+					</path>
+				</transition>
+												
+			</dependency>
+			
+		</rule>
+		
+		<triggers>
+			<!-- 
+			<trigger stage="complete" triggerClass="jp.co.pwm.workflow.reception.trigger.SendReceptionMail"/>
+			 -->
+		</triggers>
+		
+		<user-info>
+			<dict>
+				<key>key1</key><string>string value</string>
+				<key>key2</key><date>1962-12-21 00:01:10</date>
+				<key>key3</key><boolean>true</boolean>
+				<key>key4</key><number>79.8</number>
+				<key>key5</key><array><string>item 1</string><string>item 2</string><number>3</number></array>
+				<key>key6</key><dict><key>key1</key><string>string value</string><key>key2</key><number>2</number></dict>
+			</dict>
+		</user-info>
+	</workflow>
+	
+	<workflow
+		name="ロール設定リクエスト"
+		model="jp.co.pwm.workflow.roleassign.model.RoleAssignmentRequest"
+		controller="jp.co.pwm.workflow.roleassign.controller.RoleAssignmentWizard">
+		
+		<creator-role name="isEmployee" type="property" />
+		
+		<activities>
+			<activity 
+				id="1"
+				name="ロール設定上長承認"
+				model="jp.co.pwm.workflow.model.ApprovalAction"
+				controller="jp.co.pwm.workflow.roleassign.controller.RoleAssignmentApprovalWizard">
+				
+				<actor-role name="creator.manager" type="relative"/>
+			</activity>
+			<activity 
+				id="2"
+				name="ロール設定アクション"
+				model="jp.co.pwm.workflow.roleassign.model.RoleAssignmentAction"
+				controller="jp.co.pwm.workflow.roleassign.controller.RoleAssignmentActionWizard">
+				
+				<actor-role name="IT" type="role"/>
+
+			</activity>
+		
+		</activities>
+		<rule>
+			<addition>
+				<activity-ref id="1">
+					<condition>
+						<key-value key="creator.manager" operator="isnotnull" />
+					</condition>
+				</activity-ref>
+				<activity-ref id="2"/>
+			</addition>
+
+			<dependency>
+				<transition>
+					<source id="1"/>
+					<path>
+						<condition>
+							<key-value key="action.approved" value="true" operator="eq" />
+						</condition>
+						<destination id="2"/>
+					</path>
+					<path>
+						<condition>
+							<key-value key="action.approved" value="false" operator="eq" />
+						</condition>
+						<exit status="rejected" />
+					</path>
+				</transition>
+				<transition>
+					<source id="2"/>
+					<path>
+						<exit status="completed" />
+					</path>
+				</transition>
+			</dependency>
+		</rule>
+
+		<triggers>
+			<trigger stage="complete" triggerClass="jp.co.pwm.workflow.roleassign.trigger.AssignRoles" />
+		</triggers>
+
+	</workflow>
+</workflows>

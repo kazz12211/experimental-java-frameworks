@@ -1,0 +1,9 @@
+Cp1252
+"InputAssist",a001,"...","...",""
+"InputAssist",a002,"Edit...","Edit...",""
+"InputAssistEditor",a001,"Close","Close",""
+"InputAssistEditor",a002,"Remove","Remove",""
+"InputAssistEditor",a003,"Add","Add",""
+"MissingRequestLink",1,"No activity class","No activity class",""
+"MissingRequestLink",2,"No actor assigned","No actor assigned",""
+"MissingRequestLink",3,"No request sent to %s","No request sent to %s",""

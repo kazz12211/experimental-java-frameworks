@@ -1,0 +1,93 @@
+<a:If ifTrue="$!editable">
+<t:DataTable list="$context.workflow.attachments" item="$currentAttachment"
+	displayGroup="$displayGroup" enableScrolling="$true" singleSelect="$true"
+	showSelectionControl="$false">
+
+	<t:Column label="$[a006]File">
+
+				<a:String value="$currentAttachment.fileName" />
+
+	</t:Column>
+
+	<t:Column key="date" label="$[a007]Date" formatter="$formatters.dateTime" />
+	<t:Column key="contentType" label="$[a008]Type" />
+	<t:Column key="data.length" label="$[a009]Size" />
+
+	<t:Column width="1px">
+
+		<a:If ifTrue="$currentAttachment.fileName">
+			<w:TextButton action="$doDownload" submitForm="$false">
+				<a:Local key="a014">Download</a:Local>
+			</w:TextButton>
+		</a:If>
+
+
+	</t:Column>
+
+
+</t:DataTable>
+
+<a:Else />
+<t:DataTable list="$context.workflow.attachments" item="$currentAttachment"
+	displayGroup="$displayGroup" enableScrolling="$true" singleSelect="$true"
+	showSelectionControl="$false">
+
+	<t:Column label="$[a010]File" isValidColumn="$true">
+
+		<a:HighLightedErrorScope errorValueSource="$currentAttachment"
+			errorFieldPath="fileName">
+
+			<w:ErrorIndicator showRequired="$^required" />
+
+			<a:If ifTrue="$currentAttachment.fileName">
+
+				<a:String value="$currentAttachment.fileName" />
+				<!-- 
+				[
+				<i>
+					<a:Hyperlink action="$update" submitForm="$false">
+						<a:Local key="a005">Update</a:Local>
+					</a:Hyperlink>
+				</i>
+				]
+				 -->
+				<a:Else />
+
+				<a:FileUpload filename="$currentAttachment.fileName"
+					bytes="$currentAttachment.data" mimeType="$currentAttachment.contentType"
+					maxLength="$maxFileSize" fileSizeExceeded="$fileSizeExceeded" />
+
+			</a:If>
+
+		</a:HighLightedErrorScope>
+	</t:Column>
+
+	<t:Column key="date" label="$[a011]Date" formatter="$formatters.dateTime" />
+	<t:Column key="contentType" label="$[a012]Type" />
+	<t:Column key="data.length" label="$[a013]Size" />
+
+	<t:Column width="1px">
+
+		<a:If ifTrue="$currentAttachment.fileName">
+			<w:TextButton action="$doDownload" submitForm="$false">
+				<a:Local key="a015">Download</a:Local>
+			</w:TextButton>
+		</a:If>
+		<w:TextButton action="$remove" submitForm="$false">
+			<a:Local key="a016">Remove</a:Local>
+		</w:TextButton>
+
+
+	</t:Column>
+
+
+	<t:ButtonArea>
+		<w:TextButton action="$add" submitForm="$false">
+			<a:Local key="a017">Add</a:Local>
+		</w:TextButton>
+		<w:TextButton action="$upload">
+			<a:Local key="a018">Upload Files</a:Local>
+		</w:TextButton>
+	</t:ButtonArea>
+</t:DataTable>
+</a:If>

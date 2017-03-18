@@ -1,0 +1,14 @@
+<w:TabSet>
+	<w:Tab label="$[a001]Workflows">
+		<x:AnalysisByWorkflow />
+	</w:Tab>
+	<w:Tab label="$[a002]Activities">
+		<x:AnalysisByActivity />
+	</w:Tab>
+	<w:Tab label="$[a003]Workflow Summary">
+		<x:SummaryByWorkflow />
+	</w:Tab>
+	<w:Tab label="$[a004]Activity Summary">
+		<x:SummaryByActivity />
+	</w:Tab>
+</w:TabSet>

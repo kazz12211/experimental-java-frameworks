@@ -1,0 +1,13 @@
+<!DOCTYPE frame SYSTEM "Frame.dtd">
+
+<frame label="Assign">
+
+	<actions>
+		<action name="saveActivity" />
+		<action name="returnActivity" />
+		<action name="submitActivity" />
+	</actions>
+	
+	<content source="jp.co.pwm.workflow.roleassign.controller.RoleAssignmentActionAssign" />
+	
+</frame>

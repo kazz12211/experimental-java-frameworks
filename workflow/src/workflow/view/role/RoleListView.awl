@@ -1,0 +1,38 @@
+<t:DataTable displayGroup="$displayGroup" list="$objects" item="$currentObject"
+	enableScrolling="$true"
+	singleSelect="$true"
+	showSelectionColumn="$false">
+	
+	<t:HeadingArea>
+		<div style="float:left">
+			<table border="0">
+				<tr>
+				<td><a:Local key="a005">Keyword</a:Local></td>
+				<td><a:TextField value="$keyword" /></td>
+				<td><w:TextButton action="$fetch"><a:Local key="a006">Query</a:Local></w:TextButton></td>
+				</tr>
+			</table>
+		</div>
+	</t:HeadingArea>
+
+	<t:Column key="name" label="$[a001]Name">
+		<a:TextField value="$currentObject.name" />
+	</t:Column>
+	<t:Column key="uid" label="$[a002]Unique Name">
+		<a:TextField value="$currentObject.uid" />
+	</t:Column>
+	<t:Column key="description" label="$[a003]Description">
+		<a:TextArea value="$currentObject.description" cols="40" rows="3" />
+	</t:Column>
+	<t:Column key="users" label="$[a004]Users">
+		<a:String value="$currentObject.userNames" />
+	</t:Column>
+	
+	<t:ButtonArea>
+		<w:TextButton action="$insertNew"><a:Local key="a007">Insert New</a:Local></w:TextButton>
+		<w:TextButton action="$delete" disabled="$!displayGroup.selectedObject"><a:Local key="a008">Delete</a:Local></w:TextButton>
+		<w:TextButton action="$saveChanges"><a:Local key="a009">Save Changes</a:Local></w:TextButton>
+		<w:TextButton action="$revert"><a:Local key="a010">Revert</a:Local></w:TextButton>
+		<w:TextButton action="$fetch"><a:Local key="a011">Refetch</a:Local></w:TextButton>
+	</t:ButtonArea>
+</t:DataTable>

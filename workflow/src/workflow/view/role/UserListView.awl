@@ -1,0 +1,62 @@
+<t:DataTable displayGroup="$displayGroup" list="$objects" item="$currentObject"
+	enableScrolling="$true"
+	singleSelect="$true"
+	showSelectionColumn="$false">
+	
+	<t:HeadingArea>
+		<div style="float:left">
+			<table border="0">
+				<tr>
+				<td><a:Local key="a008">Keyword</a:Local></td>
+				<td><a:TextField value="$keyword" /></td>
+				<td width="60px">    </td>
+				<td><w:TextButton action="$fetch"><a:Local key="a009">Query</a:Local></w:TextButton></td>
+				</tr>
+			</table>
+		</div>
+	</t:HeadingArea>
+
+	<t:Column key="name" label="$[a001]Name">
+		<a:TextField value="$currentObject.name" />
+	</t:Column>
+	<t:Column key="email" label="$[a002]Email">
+		<a:TextField value="$currentObject.email" />
+	</t:Column>
+	<t:Column key="password" label="$[a003]Password">
+		<a:PasswordField value="$currentObject.password" />
+	</t:Column>
+	<t:Column key="phoneNumber" label="$[a004]Phone">
+		<a:TextField value="$currentObject.phoneNumber" />
+	</t:Column>
+	<t:Column key="ldapUID" label="$[a005]Unique Name">
+		<a:TextField value="$currentObject.ldapUID" />
+	</t:Column>
+	<t:Column key="reportTo.name" label="$[a006]Report To">
+		<w:GenericChooser 
+			list="$users" 
+			object="$currentObject" 
+			key="reportTo" 
+			displayKey="name"
+			type="Chooser" 
+			multiSelect="$false" />		
+	</t:Column>
+	<t:Column key="roleNames" label="$[a007]Roles">
+		<w:GenericChooser 
+			list="$roles" 
+			object="$currentObject" 
+			key="roles" 
+			displayKey="name"
+			type="Chooser" 
+			multiSelect="$true" />		
+	</t:Column>
+	<t:Column key="isEmployee" label="$[a015]Employee">
+		<a:Checkbox value="$currentObject.isEmployee" type="boolean" />
+	</t:Column>
+	<t:ButtonArea>
+		<w:TextButton action="$insertNew"><a:Local key="a010">Insert New</a:Local></w:TextButton>
+		<w:TextButton action="$delete" disabled="$!displayGroup.selectedObject"><a:Local key="a011">Delete</a:Local></w:TextButton>
+		<w:TextButton action="$saveChanges"><a:Local key="a012">Save Changes</a:Local></w:TextButton>
+		<w:TextButton action="$revert"><a:Local key="a013">Revert</a:Local></w:TextButton>
+		<w:TextButton action="$fetch"><a:Local key="a014">Refetch</a:Local></w:TextButton>
+	</t:ButtonArea>
+</t:DataTable>

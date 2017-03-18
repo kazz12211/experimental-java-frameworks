@@ -1,0 +1,10 @@
+<div style="border:solid #9999CC 1px;padding:10px 4px 4px 4px;width:640px;height:380px">
+
+	<w:FormTable>
+		<w:FormRow label="$[a001]Show Counts" labelNowrap="$true">
+			<a:Checkbox value="$showCounts" type="boolean" />
+		</w:FormRow>
+	</w:FormTable>
+
+
+</div>

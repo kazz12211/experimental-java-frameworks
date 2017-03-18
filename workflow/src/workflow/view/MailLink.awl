@@ -1,0 +1,3 @@
+<a:If notEqualNull="$email">
+<a href="$mailToLink"><a:String value="$mailToString"/></a>
+</a:If>

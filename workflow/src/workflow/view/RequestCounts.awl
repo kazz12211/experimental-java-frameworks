@@ -1,0 +1,25 @@
+<w:RoundedBox>
+<a:RefreshRegion>
+<div style="width:120px;padding:5px 5px 5px 5px">
+<h2><a:Local key="a001">Requests</a:Local></h2>
+<table width="100%">
+	<tr>
+		<td align="right" width="50%"><a:Local key="a002">Requested</a:Local></td>
+		<td align="right"><a:String value="^user.counts.requestedRequest" /></td>
+	</tr>
+	<tr>
+		<td align="right"><a:Local key="a003">Submitted</a:Local></td>
+		<td align="right"><a:String value="^user.counts.submittedRequest" /></td>
+	</tr>
+	<tr>
+		<td align="right"><a:Local key="a004">Rejected</a:Local></td>
+		<td align="right"><a:String value="^user.counts.rejectedRequest" /></td>
+	</tr>
+	<tr>
+		<td align="right"><a:Local key="a005">Expired</a:Local></td>
+		<td align="right"><a:String value="^user.counts.expiredRequest" /></td>
+	</tr>	
+</table>
+</div>
+</a:RefreshRegion>
+</w:RoundedBox>

@@ -1,0 +1,37 @@
+<w:RoundedBox>
+<a:RefreshRegion>
+<div style="width:120px;padding:5px 5px 5px 5px">
+<h2><a:Local key="a001">Workflows</a:Local></h2>
+<table width="100%">
+	<tr>
+		<td align="right" width="50%"><a:Local key="a002">Saved</a:Local></td>
+		<td align="right"><a:String value="^user.counts.savedWorkflow" /></td>
+	</tr>
+	<tr>
+		<td align="right"><a:Local key="a003">Submitted</a:Local></td>
+		<td align="right"><a:String value="^user.counts.submittedWorkflow" /></td>
+	</tr>
+	<tr>
+		<td align="right"><a:Local key="a004">Completed</a:Local></td>
+		<td align="right"><a:String value="^user.counts.completedWorkflow" /></td>
+	</tr>
+	<tr>
+		<td align="right"><a:Local key="a005">Rejected</a:Local></td>
+		<td align="right"><a:String value="^user.counts.rejectedWorkflow" /></td>
+	</tr>
+	<tr>
+		<td align="right"><a:Local key="a006">Pending</a:Local></td>
+		<td align="right"><a:String value="^user.counts.pendingWorkflow" /></td>
+	</tr>
+	<tr>
+		<td align="right"><a:Local key="a007">Expired</a:Local></td>
+		<td align="right"><a:String value="^user.counts.expiredWorkflow" /></td>
+	</tr>
+	<tr>
+		<td align="right"><a:Local key="a008">Error</a:Local></td>
+		<td align="right"><a:String value="^user.counts.errorWorkflow" /></td>
+	</tr>
+</table>
+</div>
+</a:RefreshRegion>
+</w:RoundedBox>

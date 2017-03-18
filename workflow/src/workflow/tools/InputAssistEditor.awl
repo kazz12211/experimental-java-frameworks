@@ -1,0 +1,17 @@
+<w:ModalPageWrapper hasForm="$true" doneTitle="$[a001]Close" doneAction="$close">
+<div style="height:300px;width:500px">
+<t:DataTable list="$words" index="$index" item="$word" showColumnHeader="$false">
+	<t:Column>
+		<a:String value="$word"/> <a:Hyperlink action="$remove"><a:Local key="a002">Remove</a:Local></a:Hyperlink>
+	</t:Column>
+	<t:ButtonArea>
+		<table><tr>
+			<td>
+				<a:TextField value="$newWord" />
+			</td>
+			<td><w:TextButton action="$add"><a:Local key="a003">Add</a:Local></w:TextButton></td>
+		</tr></table>
+	</t:ButtonArea>
+</t:DataTable>
+</div>
+</w:ModalPageWrapper>

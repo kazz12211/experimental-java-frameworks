@@ -1,0 +1,7 @@
+<w:PopupMenuLink menuId="$menuId"><a:Local key="a001">...</a:Local></w:PopupMenuLink>
+<w:PopupMenu menuId="$menuId">
+<a:For list="$words" item="$word">
+<w:PopupMenuItem action="$selectWord"><a:String value="$word"/></w:PopupMenuItem>
+</a:For>
+<w:PopupMenuItem action="$editDictionary"><a:Local key="a002">Edit...</a:Local></w:PopupMenuItem>
+</w:PopupMenu>

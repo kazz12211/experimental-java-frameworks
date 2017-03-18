@@ -1,0 +1,27 @@
+<w:TabSet>
+<w:Tab label="$[a001]Workflow">
+	<w:TabSet>
+		<w:Tab label="$[a002]Browse">
+			<x:WorkflowSearch />
+		</w:Tab>
+		<w:Tab label="$[a003]Archive">
+			<x:WorkflowArchive />
+		</w:Tab>
+		<w:Tab label="$[a004]Trash">
+			<x:WorkflowTrash />
+		</w:Tab>
+	</w:TabSet>
+	</w:Tab>
+<w:Tab label="$[a005]Request">
+	<x:RequestSearch />
+</w:Tab>
+<w:Tab label="$[a006]Activity">
+	<x:ActivitySearch />
+</w:Tab>
+<w:Tab label="$[a007]Unknown Address Request">
+	<x:UnknownAddressRequestSearch />
+</w:Tab>
+<w:Tab label="$[a008]Missing Activity">
+	<x:MissingActivitySearch />
+</w:Tab>
+</w:TabSet>

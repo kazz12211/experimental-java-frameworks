@@ -1,0 +1,86 @@
+<w:HintMessage>
+	<a:Local key="a007">Please choose roles to request to be assigned.</a:Local>
+</w:HintMessage>
+<w:BasicPageWrapper hasForm="$true">
+<w:FourZoneLayout>
+
+<a:Content name="top">
+<w:FormTable showErrorFlags="$true">
+
+<a:If ifTrue="$!editable">
+
+	<w:FormRow label="$[a001]Title" labelNowrap="$true">
+		<a:String value="$context.workflow.title" />
+	</w:FormRow>
+	<w:FormRow label="$[a002]Creator" labelNowrap="$true">
+		<a:String value="$context.workflow.creator.name" />
+	</w:FormRow>
+	<w:FormRow label="$[a003]Requester">
+		<a:String value="$context.workflow.requester.name" />
+	</w:FormRow>
+	<w:FormRow label="$[a012]Comment">
+		<a:TextArea value="$workflow.comment"  editable="$false" cols="50" rows="4" />
+	</w:FormRow>
+
+<a:Else />
+
+	<w:FormRow label="$[a001]Title" labelNowrap="$true" errorKey="title">
+		<a:TextField value="$context.workflow.title" size="50"/>
+	</w:FormRow>
+	<w:FormRow label="$[a002]Creator" labelNowrap="$true">
+		<a:String value="$context.workflow.creator.name" />
+	</w:FormRow>
+	<w:FormRow label="$[a003]Requester" errorKey="requester" labelNowrap="$true">
+		<w:GenericChooser list="${workflow.model.User.allEmployees()}"
+			type="PopupControl" displayKey="name" object="$context.workflow"
+			key="requester" action="$requesterChanged"/>
+	</w:FormRow>
+	<w:FormRow label="$[a012]Comment">
+		<a:TextArea value="$workflow.comment"  editable="$true" cols="50" rows="4" />
+		<br/>
+		<font color="red"><a:Local key="a013">Please write your requirement</a:Local></font>
+	</w:FormRow>
+
+</a:If>
+
+</w:FormTable>
+
+</a:Content>
+
+<a:Content name="bottom">
+
+	<table><tr>
+	<td valign="top" width="70%">
+	<t:DataTable displayGroup="$sourceDisplayGroup" list="$filteredRoles" multiSelect="$editable"
+		enableScrolling="$true">
+		<t:HeadingArea>
+			<w:SectionHeading title="$[a010]Available Roles"/>
+		</t:HeadingArea>
+		<t:Column key="name" label="$[a004]Name" width="30%"/>
+		<t:Column key="description" label="$[a005]Description" width="65%"/>
+		<t:RightButtonArea>
+			<div style="float:right">
+				<w:TextButton action="$addRoles"><a:Local key="a008">Add</a:Local></w:TextButton>
+			</div>
+		</t:RightButtonArea>
+	</t:DataTable>
+	</td>
+	<td valign="top" width="30%">
+	<t:DataTable displayGroup="$destDisplayGroup" list="$context.workflow.requestedRoles" multiSelect="$editable"
+		enableScrolling="$true">
+		<t:HeadingArea>
+			<w:SectionHeading title="$[a011]Requested Roles"/>
+		</t:HeadingArea>
+		<t:Column key="name" label="$[a006]Name" />
+		<t:RightButtonArea>
+			<div style="float:right">
+				<w:TextButton action="$removeRoles"><a:Local key="a009">Remove</a:Local></w:TextButton>
+			</div>
+		</t:RightButtonArea>
+	</t:DataTable>
+	</td>
+	</tr></table>
+</a:Content>
+</w:FourZoneLayout>
+
+</w:BasicPageWrapper>

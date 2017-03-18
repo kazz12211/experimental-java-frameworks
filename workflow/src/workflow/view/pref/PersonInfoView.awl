@@ -1,0 +1,34 @@
+<div style="border:solid #9999CC 1px;padding:10px 4px 4px 4px;width:640px;height:380px">
+	<w:FormTable>
+		<w:FormRow label="$[a001]Name" labelNowrap="$true">
+			<a:TextField value="$session.user.name" />
+		</w:FormRow>
+		<w:FormRow label="$[a002]Email" labelNowrap="$true">
+			<a:TextField value="$session.user.email" />
+		</w:FormRow>
+		<w:FormRow label="$[a003]Phone" labelNowrap="$true">
+			<a:TextField value="$session.user.phoneNumber" />
+		</w:FormRow>
+		<w:FormRow label="$[a004]Mobile Email" labelNowrap="$true">
+			<a:TextField value="$session.user.mobileEmail" />
+		</w:FormRow>
+		<w:FormRow label="$[a005]Mobile Phone" labelNowrap="$true">
+			<a:TextField value="$session.user.mobilePhoneNumber" />
+		</w:FormRow>
+		<w:FormRow label="$[a006]Employee" labelNowrap="$true">
+			<a:Checkbox value="$session.user.isEmployee" type="boolean" disabled="$true" />
+		</w:FormRow>
+		<w:FormRow label="$[a007]Roles" labelNowrap="$true">
+			<a:String value="$session.user.roleNames" />
+		</w:FormRow>
+		<w:FormRow label="$[a008]Report To" labelNowrap="$true">
+			<a:String value="$session.user.reportTo.name" />
+		</w:FormRow>
+		<w:FormRow label="$[a009]Delegator" labelNowrap="$true">
+			<a:String value="$session.user.delegator.name" />
+		</w:FormRow>
+		<w:FormRow label="$[a010]Available Models" labelNowrap="$true">
+			<a:String value="$availableModelNames" />
+		</w:FormRow>
+	</w:FormTable>
+</div>

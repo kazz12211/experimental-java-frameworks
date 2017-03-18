@@ -1,0 +1,31 @@
+リレーション用のテーブルの一意制約がHibernateの自動テーブル生成されたものでは問題があった。
+
+問題のあったテーブル
+
+actor_request
+    
+自動生成されたテーブルに対して次のSQLコマンドを実行して問題箇所を修正する必要がある。
+
+問題のある一意制約を削除
+alter table actor_request drop constraint actor_request_requests_id_key;
+
+一意制約を再登録
+alter table actor_request add constraint actor_request_requests_id_key unique(actor_id, requests_id);
+
+actor_activity
+
+alter table actor_activity drop constraint actor_activity_activities_id_key;
+alter table actor_activity add constraint actor_activity_activities_id_key unique(actor_id, activities_id);
+
+
+RoleAssignment関係の一意制約の修正
+alter table roleassignmentrequest_actor drop constraint roleassignmentrequest_actor_requestedroles_id_key;
+alter table roleassignmentrequest_actor add constraint roleassignmentrequest_actor_requestedroles_id_key unique(requestedroles_id,roleassignmentrequest_id);
+
+alter table roleassignmentaction_actor drop constraint roleassignmentaction_actor_assignedroles_id_key;
+alter table roleassignmentaction_actor add constraint roleassignmentaction_actor_assignedroles_id_key unique(roleassignmentaction_id,assignedroles_id);
+
+Procure関係の一意制約の修正
+
+alter table procure_procurelineitem drop constraint procure_procurelineitem_lineitems_id_key;
+alter table procure_procurelineitem add constraint procure_procurelineitem_lineitems_id_key unique(procure_id,lineitems_id);

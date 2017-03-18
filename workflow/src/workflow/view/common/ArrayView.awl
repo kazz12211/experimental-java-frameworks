@@ -1,0 +1,32 @@
+<t:DataTable list="$array" item="$currentItem" showColumnHeader="$false">
+	<t:Column>
+		<a:If isEqual="$type" value="dict">
+			<x:DictionaryView dictionary="$currentItem" />
+		</a:If>
+		
+		<a:If isEqual="$type" value="array">
+			<x:ArrayView array="$currentItem" />
+		</a:If>
+	
+		<a:If isEqual="$type" value="date">
+			<a:String value="$currentItem" formatter="$formatters.dateTime" />
+		</a:If>
+		
+		<a:If isEqual="$type" value="boolean">
+			<a:String value="$currentItem" />
+		</a:If>
+		
+		<a:If isEqual="$type" value="string">
+			<a:String value="$currentItem" />
+		</a:If>
+		
+		<a:If isEqual="$type" value="number">
+			<a:String value="$currentItem" />
+		</a:If>
+		
+		<a:If isEqual="$type" value="unknown">
+			<a:Local key="a001">unknown object type</a:Local>
+		</a:If>
+	</t:Column>
+	
+</t:DataTable>

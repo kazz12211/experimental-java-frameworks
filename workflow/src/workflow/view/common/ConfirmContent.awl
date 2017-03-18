@@ -1,0 +1,15 @@
+<w:FormTable>
+	<a:If equalNull="$activity">
+
+		<w:FormRow label="$[a001]Confirmed">
+			<a:Local key="a003">empty</a:Local>
+		</w:FormRow>
+
+		<a:Else />
+		<w:FormRow label="$[a002]Confirmed">
+			<a:Checkbox value="$activity.confirmed" type="boolean"
+				disabled="$!editable" />
+		</w:FormRow>
+
+	</a:If>
+</w:FormTable>

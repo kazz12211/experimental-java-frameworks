@@ -1,0 +1,1314 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title>universe</title>
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+</head>
+<body>
+<h1 id="toc_0">BIGDATAROBO UniVerse データアクセスフレームワーク</h1>
+
+<h2 id="toc_1">オブジェクトマッピング</h2>
+
+<p>UniVerse データアクセスフレームワークはUniVerseデータベースに保存されるレコードをオブジェクトにマッピングするフレームワークです。
+UniVerseのテーブルはUniEntityに、フィールドはUniFieldに、アソシエーションはUniAssociationに、複数テーブルのレコードの関連はUniJoinにマッピングされます。</p>
+
+<h2 id="toc_2">UniContextの生成</h2>
+
+<p>UniContextはすべてのデータベースアクセスの入り口になるクラスです。
+UniContextは同一スレッド内からいつでも参照できるように、スレッドローカルに一つ生成されます。
+Webアプリケーションの場合はブラウザセッションの初期化を行うタイミングで次のようなコードを実行します。</p>
+
+<pre><code>if(UniContext.peek() == null)
+    UniContext.bindNewContext();</code></pre>
+
+<p><code>peek()</code>メソッドはスレッドローカル内にUniContextのインスタンスが存在するかを調べるメソッドです。<code>peek()</code>の呼び出しの結果、UniContextのインスタンスが存在しない場合は、<code>bindNewContext()</code>メソッドを呼び出して、スレッドローカル内に新しいUniContextインスタンスを設定します。</p>
+
+<p>UniContextのインスタンスが生成されるときに、UniModel.xmlファイルが読み込まれてUniModelGroupが生成され、その中にはデータベースアクセスに必要なマッピング情報がUniModelとして作られます。</p>
+
+<p>データベースアクセスを行う場合は、以下のコードを記述してUniContextとインスタンスを取得してから各種メソッドを呼び出します。</p>
+
+<pre><code>UniContext myContext = UniContext.get(); // UniContextの取得
+List objects = myContext.executeQuery(myQuerySpec);　//検索</code></pre>
+
+<p>ブラウザセッションの初期化の際に生成したUniContextはそのセッションが終了するタイミングで次のようなコードを記述して消去するようにします。</p>
+
+<pre><code>UniContext.unbind();</code></pre>
+
+<h2 id="toc_3">データベースモデリング</h2>
+
+<h3 id="toc_4">モデルファイル</h3>
+
+<p>UniVerseデータアクセスフレームワーク（2015/08/07時点ではAribaWebアプリケーションのみを想定）はWebServerResource内のuniverseディレクトリに保存されたUniModel.xmlファイルからデータベースとオブジェクトモデルを対応付けたモデル情報を読み込みます。</p>
+
+<h3 id="toc_5">モデルファイルの例</h3>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+
+&lt;models&gt;
+    &lt;model name=&quot;Example&quot;&gt;
+    
+        &lt;entity name=&quot;Person&quot; file=&quot;PERSON&quot; class=&quot;model.Person&quot;&gt;
+            &lt;field name=&quot;@ID&quot; key=&quot;id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot;/&gt;
+            &lt;field name=&quot;NAME&quot; key=&quot;name&quot; valueClass=&quot;String&quot; /&gt;
+            &lt;field name=&quot;EMAIL&quot; key=&quot;email&quot; valueClass=&quot;String&quot; /&gt;
+            &lt;field name=&quot;DISCRIMINATOR&quot; key=&quot;discriminator&quot; valueClass=&quot;String&quot; /&gt;
+        &lt;/entity&gt;
+        
+        &lt;entity name=&quot;Guest&quot; file=&quot;PERSON&quot; class=&quot;model.Guest&quot;&gt;
+            &lt;inheritance type=&quot;singleTable&quot; parentEntity=&quot;Person&quot; 
+                discriminatorField=&quot;discriminator&quot; discriminatorValue=&quot;Guest&quot; /&gt;
+            &lt;field name=&quot;@ID&quot; key=&quot;id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot;/&gt;
+            &lt;field name=&quot;NAME&quot; key=&quot;name&quot; valueClass=&quot;String&quot; /&gt;
+            &lt;field name=&quot;EMAIL&quot; key=&quot;email&quot; valueClass=&quot;String&quot; /&gt;
+            &lt;field name=&quot;DISCRIMINATOR&quot; key=&quot;discriminator&quot; valueClass=&quot;String&quot; /&gt;
+        &lt;/entity&gt;
+        
+        &lt;entity name=&quot;Customer&quot; file=&quot;CUSTOMER&quot; class=&quot;model.Customer&quot;&gt;
+            &lt;inheritance type=&quot;tablePerClass&quot; parentEntity=&quot;Person&quot; /&gt;
+            &lt;field name=&quot;@ID&quot; key=&quot;id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot;/&gt;
+            &lt;field name=&quot;NAME&quot; key=&quot;name&quot; valueClass=&quot;String&quot; /&gt;
+            &lt;field name=&quot;EMAIL&quot; key=&quot;email&quot; valueClass=&quot;String&quot; /&gt;
+            &lt;field name=&quot;PHONE&quot; key=&quot;phone&quot; valueClass=&quot;String&quot; /&gt;
+            &lt;join key=&quot;sales&quot; toMany=&quot;true&quot; destinationEntityName=&quot;CustomerSales&quot; 
+                sourceKey=&quot;id&quot; destinationKey=&quot;customerId&quot; ownsDestination=&quot;true&quot; /&gt;
+        &lt;/entity&gt;
+        
+        &lt;entity name=&quot;CustomerSales&quot; file=&quot;CUSTOMER_SALES&quot; class=&quot;model.CustomerSales&quot;&gt;
+            &lt;field name=&quot;@ID&quot; key=&quot;id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot; /&gt;
+            &lt;field name=&quot;DATE&quot; key=&quot;date&quot; valueClass=&quot;Date&quot; dateFormat=&quot;MM/dd/yy&quot; /&gt;
+            &lt;field name=&quot;AMOUNT&quot; key=&quot;amount&quot; valueClass=&quot;Double&quot; /&gt;
+            &lt;field name=&quot;CUSTOMERID&quot; key=&quot;customerId&quot; valueClass=&quot;Long&quot; /&gt;
+            &lt;join key=&quot;customer&quot; toMany=&quot;false&quot; destinationEntityName=&quot;Customer&quot; 
+                sourceKey=&quot;customerId&quot; destinationKey=&quot;id&quot; ownsDestination=&quot;false&quot; /&gt;
+        &lt;/entity&gt;
+        
+        &lt;entity name=&quot;Product&quot; file=&quot;PRODUCT&quot; class=&quot;model.Product&quot;&gt;
+            &lt;field name=&quot;@ID&quot; key=&quot;productCode&quot; valueClass=&quot;String&quot; primaryKey=&quot;true&quot; /&gt;
+            &lt;field name=&quot;NAME&quot; key=&quot;productName&quot; valueClass=&quot;String&quot; /&gt;
+            &lt;field name=&quot;PRICE&quot; key=&quot;price&quot; valueClass=&quot;Double&quot; /&gt;
+            &lt;field name=&quot;DESCRIPTION&quot; key=&quot;description&quot; valueClass=&quot;String&quot; /&gt;
+            &lt;field name=&quot;CATEGORY_ID&quot; key=&quot;categoryId&quot; valueClass=&quot;Long&quot; /&gt;
+            &lt;join key=&quot;category&quot; toMany=&quot;false&quot; destinationEntityName=&quot;Category&quot; 
+                sourceKey=&quot;categoryId&quot; destinationKey=&quot;id&quot; ownsDestination=&quot;false&quot; /&gt;
+        &lt;/entity&gt;
+        
+        &lt;entity name=&quot;Category&quot; file=&quot;CATEGORY&quot; class=&quot;model.Category&quot;&gt;
+            &lt;field name=&quot;@ID&quot; key=&quot;Id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot; /&gt;
+            &lt;field name=&quot;NAME&quot; key=&quot;name&quot; valueClass=&quot;String&quot; /&gt;
+            &lt;field name=&quot;PARENT_CATEGORY_ID&quot; key=&quot;parentCategoryId&quot; valueClass=&quot;Long&quot; /&gt;
+            &lt;join key=&quot;subCategories&quot; toMany=&quot;true&quot; destinationEntityName=&quot;Category&quot; 
+                sourceKey=&quot;id&quot; destinationKey=&quot;parentCategoryId&quot; ownsDestination=&quot;false&quot; /&gt;
+            &lt;join key=&quot;parentCategory&quot; toMany=&quot;false&quot; destinationEntityName=&quot;Category&quot; 
+                sourceKey=&quot;parentCategoryId&quot; destinationKey=&quot;id&quot; ownsDestination=&quot;false&quot; /&gt;
+            &lt;join key=&quot;products&quot; toMany=&quot;true&quot; destinationEntityName=&quot;Product&quot; 
+                sourceKey=&quot;id&quot; destinationKey=&quot;categoryId&quot; ownsDestination=&quot;false&quot; /&gt;
+        &lt;/entity&gt;
+        
+        &lt;connection host=&quot;192.168.56.201&quot; port=&quot;31438&quot; username=&quot;root&quot; password=&quot;root&quot; 
+            accountPath=&quot;EXAMPLE_DB&quot; clientEncoding=&quot;UTF8&quot;/&gt;
+    &lt;/model&gt;
+&lt;/models&gt;
+</code></pre>
+
+<h3 id="toc_6">UniModelGroup</h3>
+
+<p>UniModelGroupはUniModel.xmlの<models>要素に対応するクラスです。UniModelGroupはUniModel.xmlで定義されたすべてのモデルを束ねたクラスです。
+UniModelGroupのインスタンスはUniContextが生成されるときにUniModel.xmlから読み込んで生成されるので、通常はプログラマーが明示的にこれらのクラスのインスタンスを生成するコードを書く必要はありません。
+現在の実装ではプログラム内で使用できるUniModelGroupのインスタンスは一つしかありません。UniModelGroupのインスタンスを取得するには次のようにdefaultGroup()メソッドを呼び出します。</p>
+
+<pre><code>UniModelGroup modelGroup = UniModelGroup.defaultModelGroup();</code></pre>
+
+<h3 id="toc_7">UniModel</h3>
+
+<p>UniModelはUniModel.xmlの<model>要素に対応するクラスです。UniModelの中にはUniEntityの集合とデータベース接続情報（UniConnectionInfo）を定義します。
+UniModelは名前（name属性）を持ち、UniModelGroupの次のメソッドを使用して特定のUniModelのインスタンスを取得することができます。</p>
+
+<pre><code>UniModel aModel = UniModelGroup.modelNamed(&quot;Example&quot;);</code></pre>
+
+<h3 id="toc_8">UniEntity</h3>
+
+<p>UniEntityはUniModel.xmlの<entity>要素に対応するクラスです。
+UniEntityには複数のUniField、UniAssociation、UniJoinを含めることができます。
+特定のUniEntityを取得するには次のように記述します。</p>
+
+<pre><code>// エンティティ名を使って取得
+UniEntity customerEntity = UniModelGroup.defaultModelGroup().entityNamed(&quot;Customer&quot;);</code></pre>
+
+<p>または</p>
+
+<pre><code>// エンティティクラスを使って取得
+UniEntity customerEntity = UniModelGroup.defaultModelGroup().entityForClass(Customer.class);</code></pre>
+
+<h3 id="toc_9">UniField</h3>
+
+<p>UniFieldはUniModel.xmlの<field>要素に対応するクラスです。この要素にはUniVerse上のフィールド名、マッピングされるオブジェクトのプロパティ名、値タイプ、プライマリキー属性、日付フォーマット、マルチバリュー属性、アソシエーション属性などです。
+エンティティの特定のUniFieldを取得するには次のように記述します。</p>
+
+<pre><code>UniField nameField = customerEntity.fieldNamed(&quot;name&quot;);</code></pre>
+
+<h3 id="toc_10">UniAssociation</h3>
+
+<p>UniAssociationはUniModel.xmlの<association>に対応するクラスで、抽象クラスUniRelationshipのサブクラスです。
+UniAssociationはUniFieldRefを保持します。UniFieldRefはUniFieldへの参照です。
+UniAssociationには対一の関連と対他の関連を表現するものがあります。</p>
+
+<p>エンティティの特定のUniFieldを取得するには次のように記述します。</p>
+
+<pre><code>UniAssocation ratingAssoc = customerEntity.associationNamed(&quot;ratings&quot;);</code></pre>
+
+<h3 id="toc_11">UniJoin</h3>
+
+<p>UniJoinはUniModel.xmlの<join>に対応するクラスで、抽象クラスUniRelationshipのサブクラスです。
+UniJoinは関連するエンティティ名、ジョインに必要なキーなどが設定されます。
+UniJoinには対一の関連と対他の関連を表現するものがあります。</p>
+
+<p>エンティティの特定のUniFieldを取得するには次のように記述します。</p>
+
+<pre><code>UniJoin salesJoin = customerEntity.joinNamed(&quot;sales&quot;);</code></pre>
+
+<h3 id="toc_12">UniConnectionInfo</h3>
+
+<p>UniConnectionInfoはUniModel.xmlの<connection>要素に対応するクラスです。これにはUniVerseデータベースが稼働するホスト名またはIPアドレス、ログインするためのユーザIDとパスワード、アカウントパス、クライアント文字エンコーディング、セッションタイムアウト時間が設定されます。</p>
+
+<h2 id="toc_13">データの検索</h2>
+
+<p>データベースからデータを検索するときは、対象のエンティティを取得し、必要であればUniPredicateを使って検索条件を組み立て、UniQuerySpecificationを生成して<code>executeQuery()</code>メソッドを呼び出します。</p>
+
+<h3 id="toc_14">UniQuerySpecification</h3>
+
+<p>UniQuerySpecificaionはデータベース検索を表現するクラスです。
+データ検索を行う場合はUniEntityとUniPredicateを引数としてUniQuerySpecificationのインスタンスを生成して<code>executeQuery()</code>メソッドを呼び出します。次の例は検索条件を指定せずに全件を読み込むコードです。</p>
+
+<pre><code>UniEntity customerEntity = UniModelGroup.defaultModelGroup().entityNamed(&quot;Customer&quot;);
+UniQuerySpecification spec = new UniQuerySpecification(customerEntity, null);
+List&lt;Customer&gt; customers = spec.executeQuery(spec);</code></pre>
+
+<h3 id="toc_15">UniPredicate</h3>
+
+<p>UniPredicateは検索条件を表現するクラスです。
+KeyValue型はオブジェクトのプロパティ名と値（必要なら演算子）を指定して検索条件を作る場合に使用します。
+KeyKey型はオブジェクトのプロパティの関係を指定して検索条件を作る場合に使用します。これらを組み合わせてAND条件、OR条件、Not条件を作ることもできます。</p>
+
+<pre><code>// KeyValue型
+UniPredicate kv = new UniPredicate.KeyValue(&quot;name&quot;, &quot;BIGDATAROBO&quot;);
+
+UniPredicate kv = new UniPredicate.KeyValue(&quot;name&quot;, &quot;BIGDATA&quot;, UniPredicate.Operator.Contains);
+
+// KeyKey型
+UniPredicate kk = new UniPredicate.KeyKey(&quot;stockQuantity&quot;, &quot;soldQuantity&quot;, UniPredicateion.Operator.Gte);
+
+// AND型
+UniPredicate and = new UniPredicate.And(predicate1, predicate2, predicate3);
+
+// OR型
+UniPredicate or = new UniPredicate.Or(predicate1, predicate2, predicate3);
+
+// Not型
+UniPredicate not = new UniPredicate.Not(predicate);
+</code></pre>
+
+<p>またUniVerseのEval()式をそのまま記述するためにEval型のUniPredicateもあります。</p>
+
+<pre><code>UniPredicate ev = new UniPredicate.Eval(&quot;EVAL \&quot;BALANCE&lt;1,1&gt; - BALANCE&lt;1,13&gt;\&quot; &gt; &quot; + 50000)</code></pre>
+
+<h3 id="toc_16">UniSortOrdering</h3>
+
+<p>UniSortOrderingは検索時のデータの並べ替え方法を指定するクラスです。１つ以上のUniSortOrderingのListを生成してUniQuerySpecificationに設定して使用します。</p>
+
+<pre><code>UniEntity customerEntity = UniModelGroup.defaultModelGroup().entityNamed(&quot;Customer&quot;);
+UniQuerySpecification spec = new UniQuerySpecification(customerEntity, null);
+
+List&lt;UniSortOrdering&gt; orderings = new ArrayList&lt;UniSortOrdering&gt;();
+orderings.add(new UniSortOrdering(&quot;name&quot;, UniSortOrdering.Direction.Ascending);
+orderings.add(new UniSortOrdering(&quot;age&quot;, UniSortOrdering.Direction.Descending);
+
+spec.setSortOrderings(orderings);
+</code></pre>
+
+<h3 id="toc_17">プライマリキーを指定してデータを読み込む</h3>
+
+<h2 id="toc_18">データのインサート</h2>
+
+<p>UniContextの<code>create()</code>メソッドによりデータクラスのインスタンスを生成した後に、そのインスタンスのプロパティーを設定して<code>saveChanges()</code>を呼び出します。</p>
+
+<pre><code>Customer customer = UniContext.get().create(Customer.class);
+// customerのプロパティーを設定する
+UniContext.get().saveChanges();</code></pre>
+
+<p>プライマリーキーを明示的に設定しない場合は、UniEntityに設定されたUniPrimaryKeyGeneratorを使ってプライマリーキーが設定されますが、UniPrimaryKeyGeneratorの設定がない場合はデフォルトのプライマリキー生成機能（SequenceTableKeyGenerator）が使用されます。
+SequenceTableKeyGeneratorは<code>_SEQUENCE_TABLE</code>という名前のテーブルをデータベース内に自動的に生成し、エンティティ毎にキーの値を１ずつインクリメントして、新しいレコードのプライマリキーを生成します。</p>
+
+<h2 id="toc_19">データのアップデート</h2>
+
+<pre><code>UniContext.get().updateObject(customer);
+// customerのプロパティーの値を変更する
+UniContext.get().saveChanges();</code></pre>
+
+<h2 id="toc_20">データのデリート</h2>
+
+<pre><code>UniContext.get().deleteObject(customer);
+UniContext.get().saveChanges()</code></pre>
+
+<h2 id="toc_21">継承</h2>
+
+<h3 id="toc_22">Single Tableマッピング</h3>
+
+<p>Single Tableマッピングはクラスの継承関係を単一のテーブルで実現する方式です。クラスの識別にはdiscriminatorフィールドと呼ばれる文字列型のフィールドに格納されたクラス名を使用します。</p>
+
+<p>例えば、抽象的なクラスPersonとその具象サブクラスGuestは次のように実装します。</p>
+
+<p><strong>Personクラス</strong></p>
+
+<pre><code>package model;
+
+public abstract class Person {
+
+    Long id;
+    String name;
+    String email;
+    String discriminator;
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getDiscriminator() {
+        return discriminator;
+    }
+    public void setDiscriminator(String discriminator) {
+        this.discriminator = discriminator;
+    }
+}</code></pre>
+
+<p><strong>Guestクラス</strong></p>
+
+<pre><code>package model;
+
+public class Guest extends Person {
+
+}</code></pre>
+
+<p>UniModel.xmlでのPersonクラスとGuestクラスの定義は次のようになります。</p>
+
+<pre><code>&lt;entity name=&quot;Person&quot; file=&quot;PERSON&quot; class=&quot;model.Person&quot;&gt;
+    &lt;field name=&quot;@ID&quot; key=&quot;id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot;/&gt;
+    &lt;field name=&quot;NAME&quot; key=&quot;name&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;EMAIL&quot; key=&quot;email&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;DISCRIMINATOR&quot; key=&quot;discriminator&quot; valueClass=&quot;String&quot; /&gt;
+&lt;/entity&gt;
+        
+&lt;entity name=&quot;Guest&quot; file=&quot;PERSON&quot; class=&quot;model.Guest&quot;&gt;
+    &lt;inheritance type=&quot;singleTable&quot; parentEntity=&quot;Person&quot;
+        discriminatorField=&quot;discriminator&quot; discriminatorValue=&quot;Guest&quot; /&gt;
+    &lt;field name=&quot;@ID&quot; key=&quot;id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot;/&gt;
+    &lt;field name=&quot;NAME&quot; key=&quot;name&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;EMAIL&quot; key=&quot;email&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;DISCRIMINATOR&quot; key=&quot;discriminator&quot; valueClass=&quot;String&quot; /&gt;
+&lt;/entity&gt;
+</code></pre>
+
+<h3 id="toc_23">Table Per Classマッピング</h3>
+
+<p>Table Per Classマッピングはクラスの継承関係をクラスごとの複数テーブルで実現する方式です。
+例えば、抽象的なクラスPersonとその具象サブクラスCustomerは次のように実装します。</p>
+
+<p><strong>Personクラス</strong></p>
+
+<pre><code>package model;
+
+public abstract class Person {
+
+    Long id;
+    String name;
+    String email;
+    String discriminator;
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getDiscriminator() {
+        return discriminator;
+    }
+    public void setDiscriminator(String discriminator) {
+        this.discriminator = discriminator;
+    }
+}</code></pre>
+
+<p><strong>Customerクラス</strong></p>
+
+<pre><code>package model;
+
+import java.util.List;
+
+public class Customer extends Person {
+
+    String phone;
+    
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+}
+</code></pre>
+
+<p>UniModel.xmlでのPersonクラスとCustomerクラスの定義は次のようになります。</p>
+
+<pre><code>&lt;entity name=&quot;Person&quot; file=&quot;PERSON&quot; class=&quot;model.Person&quot;&gt;
+    &lt;field name=&quot;@ID&quot; key=&quot;id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot;/&gt;
+    &lt;field name=&quot;NAME&quot; key=&quot;name&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;EMAIL&quot; key=&quot;email&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;DISCRIMINATOR&quot; key=&quot;discriminator&quot; valueClass=&quot;String&quot; /&gt;
+&lt;/entity&gt;
+        
+&lt;entity name=&quot;Customer&quot; file=&quot;CUSTOMER&quot; class=&quot;model.Customer&quot;&gt;
+    &lt;inheritance type=&quot;tablePerClass&quot; parentEntity=&quot;Person&quot; /&gt;
+    &lt;field name=&quot;@ID&quot; key=&quot;id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot;/&gt;
+    &lt;field name=&quot;NAME&quot; key=&quot;name&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;EMAIL&quot; key=&quot;email&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;PHONE&quot; key=&quot;phone&quot; valueClass=&quot;String&quot; /&gt;
+&lt;/entity&gt;
+</code></pre>
+
+<p>Table Per Classマッピングの場合はdiscriminatorフィールドを使用しないので、テーブルにdiscriminatorフィールドを用意する必要も、UniEntityの中にdiscriminatorフィールドを記述する必要もありません。</p>
+
+<h3 id="toc_24">継承されたクラスのオブジェクトの検索</h3>
+
+<p>抽象クラスPerson、その具象クラスのGuestとCustomerという関係がある場合に、次のようにPersonエンティティの検索を実行すると、具象クラスのGuestとCustomerを検索できます。</p>
+
+<pre><code>UniEntity entity = UniModelGroup.defaultGroup().entityForClass(&quot;Person&quot;);
+UniQuerySpecification spec = new UniQuerySpecification(entity, null);
+List&lt;Person&gt; = (List&lt;Person&gt;) UniContext.get().executeQuery(spec);</code></pre>
+
+<p>具象クラスCustomerだけを検索したい場合は次のように記述します。</p>
+
+<pre><code>UniEntity entity = UniModelGroup.defaultGroup().entityForClass(&quot;Customer&quot;);
+UniQuerySpecification spec = new UniQuerySpecification(entity, null);
+List&lt;Person&gt; = (List&lt;Person&gt;) UniContext.get().executeQuery(spec);</code></pre>
+
+<h2 id="toc_25">リレーション</h2>
+
+<h3 id="toc_26">アソシエーション</h3>
+
+<p>アソシエーション指定されたフィールドのセットを特定のクラスのオブジェクトにマッピングします。
+次の例ではCustomerクラスのfrom、to、ratingという３つのフィールドがマルチバリューとして定義されており、その３つのフィールドのセットをRatingというクラスのオブジェクトにマッピングしています。</p>
+
+<pre><code>&lt;entity name=&quot;Customer&quot; file=&quot;CUSTOMER&quot; class=&quot;model.Customer&quot;&gt;
+    &lt;inheritance type=&quot;tablePerClass&quot; parentEntity=&quot;Person&quot; /&gt;
+    &lt;field name=&quot;@ID&quot; key=&quot;id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot;/&gt;
+    &lt;field name=&quot;NAME&quot; key=&quot;name&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;EMAIL&quot; key=&quot;email&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;PHONE&quot; key=&quot;phone&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;RATING_FROM&quot; key=&quot;from&quot; multiValue=&quot;true&quot; valueClass=&quot;Date&quot;
+        dateFormat=&quot;yyyy/MM/dd&quot; association=&quot;A1&quot;/&gt;
+    &lt;field name=&quot;RATING_TO&quot; key=&quot;to&quot; multiValue=&quot;true&quot; valueClass=&quot;Date&quot;
+        dateFormat=&quot;yyyy/MM/dd&quot; association=&quot;A1&quot;/&gt;
+    &lt;field name=&quot;RATING&quot; key=&quot;rating&quot; multiValue=&quot;true&quot; valueClass=&quot;String&quot;
+        association=&quot;A1&quot;/&gt;
+    &lt;association name=&quot;A1&quot; key=&quot;ratings&quot; toMany=&quot;true&quot; 
+        class=&quot;model.Rating&quot;&gt;
+        &lt;field-ref name=&quot;RATING_FROM&quot; /&gt;
+        &lt;field-ref name=&quot;RATING_TO&quot; /&gt;
+        &lt;field-ref name=&quot;RATING&quot; /&gt;
+    &lt;/association&gt;
+&lt;/entity&gt;
+        </code></pre>
+
+<p>CustomerクラスとRatingクラスの実装は次のようになります。</p>
+
+<p><strong>Customer.java</strong></p>
+
+<pre><code>package model;
+
+import java.util.List;
+
+public class Customer {
+    String id;
+    String name;
+    String email;
+    String phone;
+    List&lt;Rating&gt; ratings;
+    
+    
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    public String getPersonality() {
+        return personality;
+    }
+    public List&lt;Rating&gt; getRatings() {
+        return ratings;
+    }
+    public void setRatings(List&lt;Rating&gt; ratings) {
+        this.ratings = ratings;
+    }
+
+}
+</code></pre>
+
+<p><strong>Rating.java</strong></p>
+
+<pre><code>package model;
+
+import java.util.Date;
+
+public class CustomerRating {
+    Date from;
+    Date to;
+    String rating;
+    
+    public Date getFrom() {
+        return from;
+    }
+    public void setFrom(Date from) {
+        this.from = from;
+    }
+    public Date getTo() {
+        return to;
+    }
+    public void setTo(Date to) {
+        this.to = to;
+    }
+    public String getRating() {
+        return rating;
+    }
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+}
+</code></pre>
+
+<h3 id="toc_27">ジョイン</h3>
+
+<p>リレーショナルデータベースで使用されるような対他と対一のジョインの定義方法です。
+次の例ではCustomerクラスはCustomerSalesクラスのオブジェクトのリストを保持しています。</p>
+
+<pre><code>&lt;entity name=&quot;Customer&quot; file=&quot;CUSTOMER&quot; class=&quot;model.Customer&quot;&gt;
+    &lt;inheritance type=&quot;tablePerClass&quot; parentEntity=&quot;Person&quot; /&gt;
+    &lt;field name=&quot;@ID&quot; key=&quot;id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot;/&gt;
+    &lt;field name=&quot;NAME&quot; key=&quot;name&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;EMAIL&quot; key=&quot;email&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;field name=&quot;PHONE&quot; key=&quot;phone&quot; valueClass=&quot;String&quot; /&gt;
+    &lt;join key=&quot;sales&quot; toMany=&quot;true&quot; destinationEntityName=&quot;CustomerSales&quot;
+        sourceKey=&quot;id&quot; destinationKey=&quot;customerId&quot; ownsDestination=&quot;true&quot; /&gt;
+&lt;/entity&gt;
+        
+&lt;entity name=&quot;CustomerSales&quot; file=&quot;SALES&quot; class=&quot;model.CustomerSales&quot;&gt;
+    &lt;field name=&quot;@ID&quot; key=&quot;id&quot; valueClass=&quot;Long&quot; primaryKey=&quot;true&quot; /&gt;
+    &lt;field name=&quot;DATE&quot; key=&quot;date&quot; valueClass=&quot;Date&quot; dateFormat=&quot;MM/dd/yy&quot; /&gt;
+    &lt;field name=&quot;AMOUNT&quot; key=&quot;amount&quot; valueClass=&quot;Double&quot; /&gt;
+    &lt;field name=&quot;CUSTOMERID&quot; key=&quot;customerId&quot; valueClass=&quot;Long&quot; /&gt;
+    &lt;join key=&quot;customer&quot; toMany=&quot;false&quot; destinationEntityName=&quot;Customer&quot;
+        sourceKey=&quot;customerId&quot; destinationKey=&quot;id&quot; ownsDestination=&quot;false&quot; /&gt;
+&lt;/entity&gt;</code></pre>
+
+<p>CustomerクラスとCustomerSalesクラスの実装は次のようになります。</p>
+
+<p><strong>Customer.java</strong></p>
+
+<pre><code>package model;
+
+import java.util.List;
+
+public class Customer extends Person {
+
+    String phone;
+    List&lt;CustomerSales&gt; sales;
+    
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public List&lt;CustomerSales&gt; getSales() {
+        if(sales == null)
+            sales = ListUtil.list();
+        return sales;
+    }
+    public void setSales(List&lt;CustomerSales&gt; sales) {
+        this.sales = sales;
+    }
+    public void addToSales(CustomerSales sale) {
+        UniRelationship.addObjectToBothSidesOfRelationshipWithKey(this, sale, &quot;sales&quot;);
+    }
+    public void removeFromSales(CustomerSales sale) {
+        UniRelationship.removeObjectFromBothSidesOfRelationshipWithKey(this, sale, &quot;sales&quot;);
+    }
+    
+}
+</code></pre>
+
+<p><strong>CustomerSales.java</strong></p>
+
+<pre><code>package model;
+
+import java.util.Date;
+
+public class CustomerSales {
+    Long id;
+    Long customerId;
+    Date date;
+    Double amount;
+    Customer customer;
+    
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public Long getCustomerId() {
+        return customerId;
+    }
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
+    public Date getDate() {
+        return date;
+    }
+    public void setDate(Date date) {
+        this.date = date;
+    }
+    public Double getAmount() {
+        return amount;
+    }
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+    public Customer getCustomer() {
+        return customer;
+    }
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+}
+</code></pre>
+
+<h2 id="toc_28">フォールティング</h2>
+
+<p>フォールティングとは検索時の反応速度を高めるために、関連するレコードを遅延フェッチする仕組みです。
+そのアソシエーションやジョインをプリフェッチしない設定（shouldPrefetch属性がfalseまたはshouldPrefetch属性の指定がない）がされている場合、特定のエンティティを検索したときにアソシエーション先またはジョイン先のオブジェクトをフェッチしません。</p>
+
+<h3 id="toc_29">対他リレーションシップのフォールティング</h3>
+
+<p>アソシエーションまたはジョインが対他でshouldPrefetch属性がtrueに設定されていない場合、該当するオブジェクトのプロパティーにはUniFaultingList（ArrayListのサブクラス）が設定されます。アプリケーション中でそのプロパティーに対する操作（size()やget()などのメソッド呼び出し）が行われると、フレームワーク側が自動的に対象のオブジェクトをデータベースから読み込みます。</p>
+
+<h3 id="toc_30">対一リレーションシップのフォールティング</h3>
+
+<p>アソシエーションまたはジョインが対一でshouldPrefetch属性がtrueに設定されていない場合、該当するオブジェクトのプロパティーにはnullが設定されます。アプリケーション中でそのプロパティーにアクセスしたい場合は、対応するアクセッサメソッドの中で明示的にオブジェクトを読み込むコードを次のように記述します。</p>
+
+<pre><code>public class Sales {
+    ...
+    ...
+    public Product getProduct() {
+        return (Product)UniFaulting.DefaultImplementation.getStoredValueForRelationshipWithKey(this, &quot;product&quot;);
+    }
+}
+</code></pre>
+
+<p>あるいは次のようにUniFaultingインターフェースを実装して、アクセッサメソッドの中でそのメソッドを呼び出すようにします。</p>
+
+<pre><code>public class Sales implements UniFaulting {
+
+    public Object getStoredValueForRelationshipWithKey(String key) {
+        return UniFaulting.DefaultImplementation.getStoredValueForRelationshipWithKey(this, key);
+    }
+    ...
+    ...
+    public Product getProduct() {
+        return (Product)getStoredValueForRelationshipWithKey(&quot;product&quot;);
+    }
+
+}
+</code></pre>
+
+<h2 id="toc_31">レコードロック</h2>
+
+<p>未実装</p>
+
+<h2 id="toc_32">キャッシュ</h2>
+
+<p>UniModel.xml内の<entity>要素のcacheStrategy属性にキャッシュ方式を設定することができます。</p>
+
+<h3 id="toc_33">キャッシュなし</h3>
+
+<p>エンティティをキャッシュしない設定。
+<br/>この設定を行う場合はcacheStrategyに&quot;none&quot;を指定する。</p>
+
+<h3 id="toc_34">標準キャッシュ</h3>
+
+<p>30秒程度の短時間のキャッシュでエンティティ定義で特段キャッシュのタイプを指定しない場合はこれがデフォルトのキャッシュ方式として設定される。
+<br/>この設定を行う場合はcacheStrategyに&quot;normal&quot;を指定する。</p>
+
+<h3 id="toc_35">恒久キャッシュ</h3>
+
+<p>次回のクエリ実行までキャッシュを残す設定。
+<br/>この設定を行う場合はcacheStrategyに&quot;distantfuture&quot;を指定する。</p>
+
+<h3 id="toc_36">統計的キャッシュ</h3>
+
+<p>エンティティの検索履歴に基づく統計的なキャッシュ設定。
+<br/>この設定を行う場合はcacheStrategyに&quot;statistical&quot;を指定する。</p>
+
+<h2 id="toc_37">コネクションプール</h2>
+
+<h2 id="toc_38">プライマリキーの生成</h2>
+
+<h3 id="toc_39">シーケンステーブルを利用したプライマリキー生成機能</h3>
+
+<p>プライマリキー生成機能を特段指定しない場合、フレームワークはシーケンステーブルを使ってプライマリキーの生成を試みます。シーケンステーブルは<code>_SEQUENCE_TABLE</code>という名前で自動生成されます。この場合はプライマリキーはLong型でなければなりません。</p>
+
+<h3 id="toc_40">プライマリキー生成機能の実装</h3>
+
+<p>独自のプライマリキー生成機能を実装するにはUniPrimaryKeyGeneratorのサブクラスを作り、<code>newPrimaryKeyForEntity(UniEntity entity, UniContext uniContext)</code>をオーバーライドします。
+プライマリキー生成機能はUniModel.xmlの<entity>要素内に次のように記述します。これによりフレームワークがデータのインサートを行う際に自動的にプライマリキーを生成して対象のオブジェクトのプライマリキーに設定します。</p>
+
+<pre><code>&lt;entity name=&quot;myEntity&quot; ....&gt;
+&lt;primary-key-generator class=&quot;MyPrimaryKeyGenerator&quot;/&gt;
+
+....
+
+&lt;/entity&gt;</code></pre>
+
+<h2 id="toc_41">BASICコマンドの実行</h2>
+
+<p>UniObjectsSessionにはBASICコマンドをコンパイルおよび実行する機能があります。
+BASICコマンドを表現するUniObjectBasicクラスはBASICプログラムを記述したテキストまたはBASICプログラムを記述したファイルとプログラム名、プログラム保存パスを持ちます。
+例えばBASICプログラムを記述したテキストをUniVerseに送信してコンパイルするには次のように記述します。</p>
+
+<pre><code>UniObjectsBasic basic = new UniObjectsBasic();
+basic.setProgram(sourceText);
+basic.setProgramName(&quot;BASICPROG1&quot;);
+basic.setStorageName(&quot;BP&quot;);
+UniObjectsSession session = UniContext.get().sessionForEntity(myEntity);
+session.storeBasic(basic);
+</code></pre>
+
+<p>この記述でBASICプログラムのソースコードがUniVerseに転送されて保存とコンパイルが行われます。コンパイルだけをやり直す場合は次のように記述します。</p>
+
+<pre><code>session.compileBasic(basic);</code></pre>
+
+<p>次の記述で特定のBASICプログラムがデータベース内に存在するかコンパイル済みかを確認することもできます。</p>
+
+<pre><code>boolean stored = session.isBasicStored(basic); // 存在の確認
+boolean compiled = session.isBasicCompiled(basic); // コンパイル済みの確認</code></pre>
+
+<p>引数なしでBASICプログラムを実行するには次のように記述します。</p>
+
+<pre><code>String result = session.executeBasic(basic);</code></pre>
+
+<p>引数を必要とするBASICプログラムを実行するには次のように記述します。</p>
+
+<pre><code>boolean recompileFlag = false;
+String result = session.executeBasic(basic, recompileFlag, &quot;arg1&quot;, &quot;arg2&quot;);</code></pre>
+
+<p>UniQuerySpecificationを使った検索結果（#0のセレクトリスト）を対象にBASICプログラムを実行することもできます。</p>
+
+<pre><code>UniQuerySpecification spec = new UniQuerySpecification(myEntity, somePredicate);
+String result = session.executeBasic(basic, spec);
+
+または
+
+String result = session.executeBasic(basic, spec, recompileFlag, &quot;arg1&quot;, &quot;arg2&quot;);</code></pre>
+
+<p>また保存されたセレクトリストを対象にBASICプログラムを実行するには次のように記述します。</p>
+
+<pre><code>String result = session.executeBasic(basic, &quot;MYSELECTLIST&quot;);
+
+または
+
+String result = session.executeBasic(basic, &quot;MYSELECTLIST&quot;, recompileFlag, &quot;arg1&quot;, &quot;arg2&quot;);</code></pre>
+
+<h2 id="toc_42">保存されたSELECT LISTの実行</h2>
+
+<h3 id="toc_43">保存されたSelect Listの実行</h3>
+
+<p>名前をつけて保存したセレクトリストを呼び出しすには次のように記述します。</p>
+
+<pre><code>UniObjectsSession session = UniContext.get().sessionForModel(myModel);
+int listNumber = session.getSavedQuery(&quot;MYSELECTLIST&quot;, 1);</code></pre>
+
+<p>この呼び出してセレクトリストの検索結果が1番のセレクトリストに格納されます。</p>
+
+<p>セレクトリストを呼び出した結果に対して検索を行いたい場合は次のように記述します。</p>
+
+<pre><code>UniObjectsSession session = UniContext.get().sessionForModel(myModel);
+int listNumber = session.getSavedQuery(&quot;MYSELECTLIST&quot;, 1);
+UniQuerySpecification spec = new UniQuerySpecification(myEntity, myPredicate, listNumber);
+List&lt;MyObject&gt; objects = UniContext.get().executeQuery(spec);</code></pre>
+
+<h3 id="toc_44">Union</h3>
+
+<p>UniObjectsSessionの<code>unionQueries()</code>メソッドを使うのが最も簡単な方法です。実行結果はセレクトリストに格納され、そのセレクトリストの番号が返されます。</p>
+
+<pre><code>UniObjectsSession session = UniContext.get().sessionForModel(myModel);
+int listNumber = session.unionQueries(&quot;LIST1&quot;, &quot;LIST2&quot;, &quot;LIST3&quot;);</code></pre>
+
+<p><strong>保存されたSelect Listの実行</strong>で説明したように、Unionを実行した結果に対してUniQuerySpecificationを使った検索を実行することができます。</p>
+
+<h3 id="toc_45">Intersect</h3>
+
+<p>UniObjectsSessionの<code>intersectQueries()</code>メソッドを使うのが最も簡単な方法です。実行結果はセレクトリストに格納され、そのセレクトリストの番号が返されます。</p>
+
+<pre><code>UniObjectsSession session = UniContext.get().sessionForModel(myModel);
+int listNumber = session.intersectQueries(&quot;LIST1&quot;, &quot;LIST2&quot;, &quot;LIST3&quot;);</code></pre>
+
+<p><strong>保存されたSelect Listの実行</strong>で説明したように、Intersectを実行した結果に対してUniQuerySpecificationを使った検索を実行することができます。</p>
+
+<h3 id="toc_46">Diff</h3>
+
+<p>UniObjectsSessionの<code>diffQueries()</code>メソッドを使うのが最も簡単な方法です。実行結果はセレクトリストに格納され、そのセレクトリストの番号が返されます。</p>
+
+<pre><code>UniObjectsSession session = UniContext.get().sessionForModel(myModel);
+int listNumber = session.diffQueries(&quot;LIST1&quot;, &quot;LIST2&quot;, &quot;LIST3&quot;);</code></pre>
+
+<p><strong>保存されたSelect Listの実行</strong>で説明したように、Diffを実行した結果に対してUniQuerySpecificationを使った検索を実行することができます。</p>
+
+<h2 id="toc_47">ロギング</h2>
+
+<p>log4jを使ったログ出力機能を利用しています。フレームワークが使用しているロガーは以下のものです。</p>
+
+<pre><code># 主要メソッドの実行ログ
+log4j.logger.universe
+# 開発者用
+log4j.logger.universe.dev
+# UniCommand実行ログ
+log4j.logger.universe.command
+# データベース接続関連
+log4j.logger.universe.connection
+# テスト用
+log4j.logger.universe.test
+# スナップショット関連
+log4j.logger.universe.snapshot
+# キャッシュ関連
+log4j.logger.universe.cache
+# 性能計測用
+log4j.logger.core.perf
+# ユーティリティーメッソッド一般
+log4j.logger.core.util
+# デリゲート用
+log4j.logger.core.util.delegate
+# セレクタ用
+log4j.logger.core.util.selector</code></pre>
+
+<h2 id="toc_48">サンプルコード</h2>
+
+<h3 id="toc_49">最も単純な検索</h3>
+
+<pre><code>List&lt;Customer&gt; getCustomers() {
+    List&lt;Customer&gt; customers;
+    UniEntity entity = UniModelGroup.defaultGroup().entityForClass(Customer.class);
+    UniQuerySpecification spec = new UniQuerySpecification(entity, null);
+    customers = (List&lt;Customer&gt;) UniContext.get().executeQuery(spec);
+    return customers;
+}
+</code></pre>
+
+<h3 id="toc_50">UniPredicateを使って検索条件を指定する</h3>
+
+<pre><code>List&lt;Customer&gt; findCustomers(String str) {
+    List&lt;Customer&gt; customers;
+    UniEntity entity = UniModelGroup.defaultGroup().entityNamed(&quot;Customer&quot;);
+    // emailにstrが含まれるもの
+    UniPredicate predicate = new UniPredicate.KeyValue(&quot;email&quot;, str, UniPredicate.Operator.Contains);
+    UniQuerySpecification spec = new UniQuerySpecification(entity, predicate);
+    customers = (List&lt;Customer&gt;) UniContext.get().executeQuery(spec);
+    return customers;
+}
+</code></pre>
+
+<h3 id="toc_51">プロパティの値を指定して検索する</h3>
+
+<pre><code>Customer findByEmail(String str) {
+    Map&lt;String, Object&gt; fieldValues = new HashMap&lt;String, Object&gt;();
+    fieldValues.put(&quot;email&quot;, str);
+    return (Customer) UniContext.get().findOne(Customer.class, fieldValues);
+}
+</code></pre>
+
+<h3 id="toc_52">プライマリキーを指定して検索する</h3>
+
+<pre><code>Customer findById(Long id) {
+    return UniContext.find(Customer.class, id);
+}</code></pre>
+
+<h3 id="toc_53">オブジェクトを追加する</h3>
+
+<pre><code>void addNewCustomer(String name, String phone, String email) {
+    Customer customer = UniContext.get().create(Customer.class);
+    customer.setName(name);
+    customer.setPhone(phone);
+    customer.setEmail(email);
+    try {
+        UniContext.get().saveChanges();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+
+<h3 id="toc_54">オブジェクトを削除する</h3>
+
+<pre><code>void deleteCustomer(Customer customer) {
+    UniContext.get().deleteObject(customer);
+    try {
+        UniContext.get().saveChanges();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}</code></pre>
+
+<h3 id="toc_55">対他ジョイン先のオブジェクトを追加する</h3>
+
+<pre><code>public class Customer {
+    ...
+    List&lt;CustomerSales&gt; sales;
+    
+    ...
+    public void addToSales(CustomerSales sale) {
+        UniRelationship.addObjectToBothSidesOfRelationshipWithKey(this, sale, &quot;sales&quot;);
+    }
+    ...
+}
+
+void addNewSale() {
+    Customer customer = fetchCustomer(customerName);
+    CustomerSales sales = UniContext.get().create(CustomerSales.class);
+    sales.setDate(new Date());
+    sales.setAmount(new Double(15000));
+    customer.addToSales(sales);
+    try {
+        UniContext.get().saveChanges();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}</code></pre>
+
+<h3 id="toc_56">対他ジョイン先のオブジェクトを削除する</h3>
+
+<pre><code>public class Customer {
+    ...
+    List&lt;CustomerSales&gt; sales;
+    
+    ...
+    public void removeFromSales(CustomerSales sale) {
+        UniRelationship.removeObjectFromBothSidesOfRelationshipWithKey(this, sale, &quot;sales&quot;);
+    }
+    ...
+}
+
+void removeSale(CustomerSales aSale) {
+    Customer customer = aSales.getCustomer();
+    customer.removeFromSales(aSale);
+    try {
+        UniContext.get().saveChanges();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}</code></pre>
+
+<h3 id="toc_57">BASICプログラムの実行</h3>
+
+<pre><code>UniObjectsSession getSessionForModel(String modelName) {
+    UniModel model = UniModelGroup.modelNamed(modelName);
+    UniContext context = UniContext.get();
+    return context.sessionForModel(model);
+}
+
+void executeBasicProgram(String path, String programName, String source) {
+    UniObjectsSession uSession = getSessionForModel(&quot;Example&quot;);
+
+    UniObjectsBasic basic = new UniObjectsBasic();
+    basic.setProgram(source);
+    basic.setProgramName(programName);
+    basic.setStorageName(path);
+        
+    boolean programExists = false;
+    boolean programCompiled = false;
+    
+    // BASICプログラムの存在を確認する
+    if(uSession.connection().isStored(basic)) {
+        programExists = true;
+    }
+        
+    // BASICプログラムを保存してコンパイルする
+    try {
+        uSession.connection().storeBasic(basic);
+    } catch (Exception e) {
+        e.printStackTrace();
+        return;
+    }
+        
+    // BASICプログラムがコンパイル済みかどうかを確認する
+    if(uSession.connection().isCompiled(basic)) {
+        programCompiled = true;
+    }
+
+    // BASICプログラムを実行する
+    String result = null;   
+    try {
+        result = uSession.executeBasic(basic, true);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+        
+}</code></pre>
+
+
+</body>
+
+</html>

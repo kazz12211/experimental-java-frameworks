@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mail-template>
+	<subject>[%s] ワークフローが完了しました</subject>
+	<body>
+%s 様
+
+ワークフロー「%s」の「%s」が完了しました。
+</body>
+</mail-template>

@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/core/util/Accessor.java=UTF-8
+encoding//src/core/util/Assert.java=UTF-8
+encoding//src/core/util/CharacterSet.java=UTF-8
+encoding//src/core/util/ClassFactory.java=UTF-8
+encoding//src/core/util/ClassUtils.java=UTF-8
+encoding//src/core/util/ConservertiveThreadLocal.java=UTF-8
+encoding//src/core/util/Constants.java=UTF-8
+encoding//src/core/util/DateUtils.java=UTF-8
+encoding//src/core/util/Delegate.java=UTF-8
+encoding//src/core/util/EncodingDetector.java=UTF-8
+encoding//src/core/util/FatalAssertionException.java=UTF-8
+encoding//src/core/util/FieldAccessException.java=UTF-8
+encoding/<project>=UTF-8

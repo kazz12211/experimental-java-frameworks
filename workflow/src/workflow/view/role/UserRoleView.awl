@@ -1,0 +1,11 @@
+<w:HintMessage>
+	<a:Local key="a003">Manager users and roles.</a:Local>
+</w:HintMessage>
+<w:TabSet>
+	<w:Tab label="$[a001]Roles">
+		<x:RoleListView />
+	</w:Tab>
+	<w:Tab label="$[a002]Users">
+		<x:UserListView />
+	</w:Tab>
+</w:TabSet>

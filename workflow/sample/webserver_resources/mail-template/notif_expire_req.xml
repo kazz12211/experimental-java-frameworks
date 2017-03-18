@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mail-template>
+	<subject>[%s] ワークフローの処理依頼が期限切れになりました</subject>
+	<body>
+%s 様
+
+ワークフロー「%s」の「%s」の処理期限が過ぎました。
+</body>
+</mail-template>

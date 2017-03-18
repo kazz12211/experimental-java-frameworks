@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mail-template>
+	<subject>[%s] ワークフローでエラーが発生しました</subject>
+	<body>
+%s 様
+
+ワークフロー「%s」の「%s」でエラーが発生しました。
+発生したエラーは「%s」です。
+</body>
+</mail-template>

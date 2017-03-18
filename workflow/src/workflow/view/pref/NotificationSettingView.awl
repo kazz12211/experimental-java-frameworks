@@ -1,0 +1,22 @@
+<div style="border:solid #9999CC 1px;padding:10px 4px 4px 4px;width:640px;height:380px">
+	<w:FormTable>
+		<w:FormRow label="$[a001]When request sent" labelNowrap="$true">
+			<a:Checkbox value="$requestNotif" type="boolean"/>
+		</w:FormRow>
+		<w:FormRow label="$[a002]When action submitted" labelNowrap="$true">
+			<a:Checkbox value="$actionNotif" type="boolean"/>
+		</w:FormRow>
+		<w:FormRow label="$[a003]When workflow completed" labelNowrap="$true">
+			<a:Checkbox value="$completeNotif" type="boolean"/>
+		</w:FormRow>
+		<w:FormRow label="$[a004]When workflow error" labelNowrap="$true">
+			<a:Checkbox value="$errorNotif" type="boolean"/>
+		</w:FormRow>
+		<w:FormRow label="$[a005]When workflow rejected" labelNowrap="$true">
+			<a:Checkbox value="$rejectNotif" type="boolean"/>
+		</w:FormRow>
+		<w:FormRow label="$[a006]When workflow expired" labelNowrap="$true">
+			<a:Checkbox value="$expireNotif" type="boolean"/>
+		</w:FormRow>
+	</w:FormTable>
+</div>

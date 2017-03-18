@@ -1,0 +1,32 @@
+<w:HintMessage>
+	<a:Local key="a009">Workflows created by you in trash.</a:Local>
+</w:HintMessage>
+<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+<t:DataTable title="$[a001]Workflows in trash"
+	displayGroup="$displayGroup" list="$filteredObjects"
+	showOptionsMenu="$true"
+	enableScrolling="$true"
+	initialSortKey="createdDate"
+	multiSelect="$true" submitOnSelectionChange="$true"
+	minHeight="400px"
+	tableConfig="$tableConfig">
+	
+	<t:HeadingArea>
+		<w:SectionHeading title="$[a002]Workflows in trash">
+		</w:SectionHeading>
+	</t:HeadingArea>
+	
+	<t:Column key="id" label="Id"  align="right"/>
+	<t:Column key="title" label="$[a003]Title" />
+	<t:Column key="name" label="$[a004]Name" />
+	<t:Column key="creator.name" label="$[a005]Creator"/>
+	<t:Column key="requester.name" label="$[a006]Requester"/>
+	<t:Column key="status.label" label="$[a007]Status" />
+	<t:Column key="deletedDate" formatter="$formatters.dateTime" label="$[a008]Deleted Date"/>
+	<t:SelectionButtonArea>
+		<w:TextButton action="$unremoveSelection" disabled="$!displayGroup.selectedObject">
+			<a:Local key="a010">Unremove Selection</a:Local>
+		</w:TextButton>
+	</t:SelectionButtonArea>
+</t:DataTable>
+</div>

@@ -1,0 +1,37 @@
+<t:DataTable list="$sortedKeys" item="$currentKey" title="$title">
+
+	<t:Column label="$[a001]key">
+		<a:String value="$currentKey" />
+	</t:Column>
+	<t:Column label="$[a002]value">
+	
+		<a:If isEqual="$type" value="dict">
+			<x:DictionaryView dictionary="$value" showTitle="$false"/>
+		</a:If>
+		
+		<a:If isEqual="$type" value="array">
+			<x:ArrayView array="$value" />
+		</a:If>
+	
+		<a:If isEqual="$type" value="date">
+			<a:String value="$value" formatter="$formatters.dateTime" />
+		</a:If>
+		
+		<a:If isEqual="$type" value="boolean">
+			<a:String value="$value" />
+		</a:If>
+		
+		<a:If isEqual="$type" value="string">
+			<a:String value="$value" />
+		</a:If>
+		
+		<a:If isEqual="$type" value="number">
+			<a:String value="$value" />
+		</a:If>
+		
+		<a:If isEqual="$type" value="unknown">
+			<a:Local key="a003">unknown object type</a:Local>
+		</a:If>
+	</t:Column>
+
+</t:DataTable>

@@ -1,0 +1,70 @@
+<w:HintMessage>
+	<a:Local key="a016">Unknown Address Request Search for administrator.</a:Local>
+</w:HintMessage>
+<div style="border:solid #9999CC 1px;margin-left:6px;margin-top:6px;margin-bottom:6px;margin-right:6px">
+<t:DataTable title="$[a001]Unknown Address"
+	displayGroup="$displayGroup" list="$requests" item="$currentItem"
+	showOptionsMenu="$true"
+	enableScrolling="$true"
+	initialSortKey="createdDate"
+	tableConfig="$tableConfig"
+	singleSelect="$true"
+	isItemSelectable="$itemSelectable">
+	
+	<t:HeadingArea>
+		<div style="float:right">
+			<table border="0">
+			<tr>
+			<td>
+				<a:Local key="a017">Workflow Model:</a:Local>
+			</td>
+			<td>
+			<x:WorkflowModelChooser object="$this" key="selectedModel" />
+			</td>
+			<td>
+				<a:Local key="a018">Created From:</a:Local>
+			</td>
+			<td>
+				<w:DateField value="$createdFrom" formatter="$formatters.shortDate" showYearNavigation="$true" size="12"/>
+			</td>	
+			<td>
+				<a:Local key="a019">To:</a:Local>
+			</td>
+			<td>
+				<w:DateField value="$createdTo" formatter="$formatters.shortDate" showYearNavigation="$true" size="12"/>
+			</td>
+			<td>
+				<w:TextButton action="$search"><a:Local key="a020">Search</a:Local></w:TextButton>
+			</td>
+			</tr>
+			</table>
+		</div>
+	</t:HeadingArea>
+	
+	<t:Column key="workflow.id" label="$[a002]Workflow Id"  align="right"/>
+	<t:Column key="workflow.title" label="$[a003]Title" />
+	<t:Column key="workflow.name" label="$[a004]Name" />
+	<t:Column key="workflow.creator.name" label="$[a005]Creator"/>
+	<t:Column key="id" label="$[a006]Request Id" align="right" />
+	<t:Column key="name" label="$[a007]Request Name" />
+	<t:Column key="requestTo.name" label="$[a008]Actor" />
+	<t:Column key="status.label" label="$[a009]Status" />
+	<t:Column key="createdDate" formatter="$formatters.dateTime" label="$[a010]Created Date"/>
+	<t:Column key="requestedDate" formatter="$formatters.dateTime" label="$[a011]Requested Date"/>
+	<t:Column key="submittedDate" formatter="$formatters.dateTime" label="$[a012]Submitted Date"/>
+	<t:Column key="activityRefId" label="$[a013]Ref Id" />
+	<t:Column key="activityClassName" label="$[a014]Activity Class" />
+	<t:Column label="$[a015]Reason">
+		<a:String value="$reason" />
+	</t:Column>
+	<t:Column>
+		<w:TextButton action="$inspect"><a:Local key="a021">Inspect</a:Local></w:TextButton>
+	</t:Column>
+		
+		
+	<t:SelectionButtonArea>
+		<w:GenericChooser type="PopupControl" list="$expectedUsers" displayKey="name" key="selectedUser" /><w:TextButton action="$solve"><a:Local key="a022">Solve</a:Local></w:TextButton>
+		<w:TextButton action="$solveAll"><a:Local key="a023">Solve All</a:Local></w:TextButton>
+	</t:SelectionButtonArea>
+</t:DataTable>
+</div>
